@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  padding: 25px 0px;
+  font-family: "Roboto", sans-serif;
+}
+header .header-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-box .header-logo img {
+  width: 190px;
+  margin-top: 6px;
+}
+header .header-box .header-actions {
+  display: flex;
+}
+header .header-box .header-actions .user-buttons {
+  display: flex;
+  align-items: center;
+}
+header .header-box .header-actions .user-buttons .login-button {
+  width: 160px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000;
+  font-weight: normal;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+  background-color: #f3f6f9;
+  border-radius: 12px;
+}
+header .header-box .header-actions .user-buttons .ad-announcement-button {
+  width: 160px;
+  height: 45px;
+  font-size: 16px;
+  background-color: #1f9dff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  margin-left: 9px;
+  transition: 0.3s ease;
+  border: 1px solid #1f9dff;
+}
+header .header-box .header-actions .user-buttons .ad-announcement-button:hover {
+  border: 1px solid #1f9dff;
+  background-color: #fff;
+  color: #1f9dff;
+}
+header .header-box .header-actions .user-buttons svg {
+  margin-right: 10px;
+  width: 14px;
+}
+header .header-box .header-actions .wish-and-theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+header .header-box .header-actions .wish-and-theme .wishlist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #061e40;
+  width: 40px;
+  height: 40px;
+  margin-left: 14px;
+  background-color: #f3f6f9;
+}
+header .header-box .header-actions .wish-and-theme .white-mode-btn {
+  background-image: url(/assets/images/home-page/mode-icons/moon.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  width: 40px;
+  height: 40px;
+  background-color: #f3f6f9;
+  border-radius: 12px;
+  border: transparent;
+}
+header .header-box .header-actions .wish-and-theme .night-mode-btn {
+  background-image: url(/assets/images/home-page/mode-icons/sun.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  width: 40px;
+  height: 40px;
+  background-color: #061e40;
+  border-radius: 12px;
+  border: transparent;
+  display: none;
+}
+
+main .search-area {
+  position: relative;
+}
+main .search-area .blue-box {
+  background-color: #1f9dff;
+  width: 100%;
+  height: 110px;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+}
