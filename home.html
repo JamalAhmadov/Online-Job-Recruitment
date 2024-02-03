@@ -11,18 +11,29 @@
     ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/home.css">
     <title>İş elanları</title>
 </head>
 
-<body>
+<body class="">
 
     <header>
         <div class="container">
             <div class="header-box">
-                <div class="header-logo">
-                    <a href="./home.html"><img src="./assets/images/home-page/logo/logo.svg" alt="hellojob.az-logo"></a>
+                <div>
+                    <div class="header-logo">
+                        <button class="menu-button"></button>
+                        <a href="./home.html">
+                            <img id="wmode__logo" src="./assets/images/home-page/logo/logo.svg" alt="hellojob.az-logo">
+                            <img style="display: none;" id="nmode__logo"
+                                src="./assets/images/home-page/logo/night_mode_logo.svg" alt="hellojob.az-logo">
+                        </a>
+                    </div>
                 </div>
                 <div class="header-actions">
                     <div class="user-buttons">
@@ -43,8 +54,8 @@
                                 </g>
                             </svg>
                             Sayta daxil ol</a>
-                        <a class="ad-announcement-button" href=""> <svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                height="20" viewBox="0 0 20 20">
+                        <a class="ad-announcement-button" href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                 <g id="Group_821" data-name="Group 821" transform="translate(-1124 -49)">
                                     <g id="plus-circle" transform="translate(1131.154 56.154)">
                                         <line id="Line_1" data-name="Line 1" y2="6" transform="translate(2.846 -0.154)"
@@ -62,9 +73,8 @@
                             Elan yerləşdir</a>
                     </div>
                     <div class="wish-and-theme">
-                        <a class="wishlist" href="./wishlist.html"><i class="fa-regular fa-heart"></i></a>
-                        <button class="white-mode-btn"></button>
-                        <button class="night-mode-btn"></button>
+                        <a class="wishlist" href="./wishlist.html"></a>
+                        <button id="theme__btn" class="white-mode-btn"></button>
                     </div>
                 </div>
             </div>
@@ -73,12 +83,111 @@
 
     <main>
         <div class="search-area">
-            <div class="blue-box">
+            <div class="blue-box"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="search-tabs">
+                            <li><a class="active" href="./home.html">İş elanları</a></li>
+                            <li><a href="./resumes.html">CV-lər</a></li>
+                            <li><a href="./courses.html">Kurslar</a></li>
+                        </ul>
+                    </div>
+                    <div class="search-ways col-lg-12">
+                        <div class="search-bar">
+                            <div class="search-bar-top">
+                                <form action="/search">
+                                    <div class="search_input">
+                                        <input type="text seach" name="query" value="" placeholder="Məsələn, Dizayner">
+                                    </div>
+                                    <button type="submit" class="search-button"><span>Axtar</span></button>
+                                </form>
+                                <div class="bar_buttons">
+                                    <button class="filter_open"><span>Ətraflı axtarış</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="vacancy-tabs">
+            <div class="container">
+                <div class="categories-text">
+                    <div class="col-md-12 categories-title">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1>İş elanları 2024</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <p>slider...</p>
+                </div>
 
             </div>
-            
+        </section>
+        <section id="new-vacancies">
+            <div class="container">
+                <h2 class="vacancies-title">VakanSİYALAR</h2>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div id="data__box">
 
-        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="sticky-side">
+                            <div class="sticky-banner">
+                                <a href="https://urlgeni.us/linkedin/bgbnnr" target="_blank" data-id="22"
+                                    class="vacancies__banner vacancies__banner--main click_banner">
+                                    <img loading="lazy"
+                                        src="https://www.hellojob.az/uploads/banners/2023/11/14/kapital-sag-banner-november-banner-65536c3930f8c-642f99826c18629c88e81e0d334a240365536c3930f9e-xfF83drfxG8MnB_.jpg"
+                                        width="370px" height="370px" alt="kapital sag banner - november">
+                                </a>
+                            </div>
+                            <div class="sticky-components">
+                                <a href="./kapital-bank" class="company">
+                                    <img loading="lazy"
+                                        src="https://www.hellojob.az/uploads/company/min/2023/11/27/65646f90d881d-aOi4j4_o_ERDY3X.png"
+                                        alt="Kapital Bank" class="">
+                                    <p id="capital-count"></p>
+                                </a>
+                                <a href="./kapital-bank" class="company">
+                                    <img loading="lazy"
+                                        src="https://www.hellojob.az/uploads/company/min/2023/10/23/6536807115d28-S-5pnD6C4vN8jxf.png"
+                                        alt="Kapital Bank" class="">
+                                    <p id="abb-count"></p>
+                                </a>
+                                <a href="./kapital-bank" class="company">
+                                    <img loading="lazy"
+                                        src="https://www.hellojob.az/uploads/company/min/2023/05/03/6109511b552b4-8X-PcUZWa58l2-i.png"
+                                        alt="Kapital Bank" class="">
+                                    <p id="xalq-count"></p>
+                                </a>
+                                <a href="./kapital-bank" class="company">
+                                    <img loading="lazy"
+                                        src="https://www.hellojob.az/uploads/company/min/2023/08/09/64d360ea24dbe-_tV5R4mthWwkINq.png"
+                                        alt="Kapital Bank" class="">
+                                    <p id="res-count"></p>
+                                </a>
+                                <a href="./kapital-bank" class="company">
+                                    <img loading="lazy"
+                                        src="https://www.hellojob.az/uploads/company/min/2023/11/23/655f44062d0b2-0gTeL1Dl-fQoFyb.jpeg"
+                                        alt="Kapital Bank" class="">
+                                    <p id="ast-count"></p>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
 
     </main>
 
@@ -88,6 +197,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js
     "></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/scripts/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/scripts/home.js"></script>
+
+
 
 </body>
 

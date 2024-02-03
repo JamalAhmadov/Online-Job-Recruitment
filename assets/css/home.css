@@ -7,6 +7,10 @@
   text-decoration: none;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 header {
   width: 100%;
   padding: 25px 0px;
@@ -16,6 +20,25 @@ header .header-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+header .header-box .menu-button {
+  background-image: url(/assets/images/home-page/menu-icons/open-menu.svg);
+  left: 0;
+  border: 0;
+  margin-top: 2px;
+  width: 25px;
+  height: 34px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+}
+header .header-box .header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 header .header-box .header-logo img {
   width: 190px;
@@ -63,6 +86,11 @@ header .header-box .header-actions .user-buttons .ad-announcement-button:hover {
   background-color: #fff;
   color: #1f9dff;
 }
+header .header-box .header-actions .user-buttons .ad-announcement-button:hover #Line_1,
+header .header-box .header-actions .user-buttons .ad-announcement-button:hover #Line_2,
+header .header-box .header-actions .user-buttons .ad-announcement-button:hover #Ellipse_93 {
+  stroke: #1f9dff;
+}
 header .header-box .header-actions .user-buttons svg {
   margin-right: 10px;
   width: 14px;
@@ -83,6 +111,12 @@ header .header-box .header-actions .wish-and-theme .wishlist {
   height: 40px;
   margin-left: 14px;
   background-color: #f3f6f9;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  background-image: url(/assets/images/home-page/wish-icons/heart.svg);
+  background-size: 18px;
+  opacity: 1;
 }
 header .header-box .header-actions .wish-and-theme .white-mode-btn {
   background-image: url(/assets/images/home-page/mode-icons/moon.svg);
@@ -107,17 +141,430 @@ header .header-box .header-actions .wish-and-theme .night-mode-btn {
   background-color: #061e40;
   border-radius: 12px;
   border: transparent;
-  display: none;
 }
 
+main {
+  font-family: "Poppins", sans-serif;
+}
 main .search-area {
   position: relative;
+  padding-top: 25px;
 }
 main .search-area .blue-box {
   background-color: #1f9dff;
   width: 100%;
-  height: 110px;
+  height: 107px;
   position: absolute;
   z-index: 0;
   top: 0;
+}
+main .search-area .search-tabs {
+  position: relative;
+  display: flex;
+  float: left;
+  list-style: none;
+  padding: 0;
+}
+main .search-area .search-tabs .active {
+  font-size: 18px;
+  font-weight: bold;
+}
+main .search-area .search-tabs li a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+}
+main .search-area .search-tabs li:not(:last-child):after {
+  position: relative;
+  float: right;
+  content: "|";
+  font-weight: 500;
+  color: #fff;
+  font-size: 14px;
+  margin: 0 32px;
+}
+main .search-area .search-ways {
+  z-index: 10;
+}
+main .search-area .search-ways .search-bar {
+  min-height: 77px;
+  background-color: #fff;
+  z-index: 9;
+  -webkit-box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+main .search-area .search-ways .search-bar .search-bar-top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+main .search-area .search-ways .search-bar .search-bar-top form {
+  display: flex;
+  width: 100%;
+}
+main .search-area .search-ways .search-bar .search-bar-top form .search_input {
+  display: flex;
+  width: calc(100% - 160px);
+  padding-right: 15px;
+  float: left;
+}
+main .search-area .search-ways .search-bar .search-bar-top form .search_input input {
+  width: 100%;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center left 6px;
+  background-image: url(/assets/images/home-page/search-icons/blue-search.svg);
+  padding-left: 60px;
+  font-size: 14px;
+  color: #979BA2;
+  padding-right: 15px;
+  font-weight: 300;
+  border: 0;
+  outline: 0;
+}
+main .search-area .search-ways .search-bar .search-bar-top form .search-button {
+  width: 137px;
+  height: 47px;
+  background-color: #1f9dff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid #1f9dff;
+  font-family: "Samsung Sharp Sans";
+  font-size: 14px;
+  color: #fff;
+  margin-right: 16px;
+}
+main .search-area .search-ways .search-bar .search-bar-top form .search-button:hover {
+  background-color: #fff;
+  color: #1f9dff;
+}
+main .search-area .search-ways .search-bar .search-bar-top .bar_buttons {
+  width: 190px;
+  display: flex;
+  align-items: center;
+}
+main .search-area .search-ways .search-bar .search-bar-top .bar_buttons .filter_open {
+  /* width: calc(100% - 153px); */
+  height: 47px;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 300;
+  color: #454545;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+  padding-left: 10px;
+  border: 0;
+}
+main .search-area .search-ways .search-bar .search-bar-top .bar_buttons .filter_open::before {
+  position: relative;
+  float: left;
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/assets/images/home-page/search-icons/filter-icon.svg);
+  margin-right: 16px;
+  content: "";
+}
+main #vacancy-tabs {
+  width: 100%;
+}
+main #vacancy-tabs .categories-text .categories-title {
+  margin-top: 40px;
+}
+main #vacancy-tabs .categories-text .categories-title h1 {
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  line-height: 21px !important;
+  text-transform: uppercase;
+  color: #212944;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+main #vacancy-tabs .categories-text .categories-title h1::before {
+  content: "";
+  width: 3px;
+  height: 24px;
+  background-color: #2196F3;
+  display: block;
+  margin-right: 16px;
+  border-radius: 10px;
+}
+main #vacancy-tabs .slider {
+  width: 100%;
+  height: 200px;
+  background-color: transparent;
+}
+main #new-vacancies {
+  width: 100%;
+  height: auto;
+}
+main #new-vacancies .vacancies-title {
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  line-height: 21px !important;
+  text-transform: uppercase;
+  color: #212944;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+main #new-vacancies .vacancies-title::before {
+  content: "";
+  width: 3px;
+  height: 24px;
+  background-color: #2196F3;
+  display: block;
+  margin-right: 16px;
+  border-radius: 10px;
+}
+main #new-vacancies .box__item {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  color: #212944;
+  padding: 18px;
+  border: 1px solid #E4E7EC;
+  border-radius: 6px;
+  position: relative;
+  margin-bottom: 26px;
+}
+main #new-vacancies .box__item .box__fav {
+  position: unset;
+  width: 32px;
+  height: 32px;
+  background: #F4F6F9;
+  border-radius: 6px;
+  margin-left: 28px;
+}
+main #new-vacancies .box__item .box__fav .unliked-icon {
+  position: absolute;
+  color: #061e40;
+  cursor: pointer;
+  top: 18px;
+  right: 18px;
+  color: #2196F3;
+  background-image: url(/assets/images/home-page/wish-icons/heart.svg);
+  background-size: 18px;
+  height: 30px;
+  width: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main #new-vacancies .box__item .box__main {
+  display: flex;
+  gap: 24px;
+}
+main #new-vacancies .box__item .box__main h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+main #new-vacancies .box__item .box__main p {
+  color: #212a44;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 300;
+  margin-bottom: 14px;
+  min-height: 24px;
+}
+main #new-vacancies .box__item .box__main .box__span {
+  display: flex;
+  gap: 15px;
+}
+main #new-vacancies .box__item .box__main .box__span span {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  color: #A3A6AC;
+  font-size: 14px;
+  font-weight: 300;
+}
+main #new-vacancies .box__item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+main #new-vacancies .sticky-side {
+  position: sticky;
+}
+main #new-vacancies .sticky-side .sticky-banner {
+  margin-bottom: 24px;
+}
+main #new-vacancies .sticky-side .sticky-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+main #new-vacancies .sticky-side .sticky-components .company {
+  padding: 10px;
+  border: 1px solid #E4E7EC;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #212944;
+  margin-bottom: 24px;
+}
+main #new-vacancies .sticky-side .sticky-components .company img {
+  margin-bottom: 24px;
+  object-fit: contain;
+  height: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding: 17px 0;
+    height: 75px;
+  }
+  header .header-box .menu-button {
+    display: block;
+  }
+  header .header-box .header-actions .wishlist,
+  header .header-box .header-actions .ad-announcement-button,
+  header .header-box .header-actions .login-button {
+    display: none !important;
+  }
+  header .header-box .header-actions .wish-and-theme .white-mode-btn {
+    background-image: url(/assets/images/home-page/mode-icons/moon_mobile.svg);
+    background-color: transparent;
+  }
+  main .search-area .search-tabs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main .search-area .search-ways .search-bar .search-bar-top form .search_input {
+    width: 100%;
+  }
+  main .search-area .search-ways .search-bar .search-bar-top form .search_input input {
+    background-position: right;
+    padding-left: 0px;
+    background-size: 20px;
+  }
+  main .search-area .search-ways .search-bar .search-bar-top form .search-button {
+    display: none;
+  }
+  main .search-area .search-ways .search-bar .search-bar-top .bar_buttons {
+    display: flex;
+    justify-content: end;
+    width: auto;
+  }
+  main .search-area .search-ways .search-bar .search-bar-top .bar_buttons .filter_open span {
+    display: none;
+  }
+  main #new-vacancies .box__item {
+    pad: 10px;
+  }
+  main #new-vacancies .box__item .box__fav {
+    width: 16px;
+    height: 16px;
+  }
+  main #new-vacancies .box__item .box__fav .unliked-icon {
+    height: 20px;
+    width: 15px;
+    background-size: 13px;
+  }
+  main #new-vacancies .box__item .box__main {
+    gap: 12px;
+  }
+  main #new-vacancies .box__item .box__main .box__span {
+    display: flex;
+    gap: 8px;
+  }
+  main #new-vacancies .box__item .box__main .box__span span {
+    font-size: 10px;
+  }
+  main #new-vacancies .box__item img {
+    width: 30px;
+    height: 30px;
+  }
+  main #new-vacancies .box__item p {
+    font-size: 12px;
+  }
+}
+body.dark-theme {
+  background-color: #081833;
+  color: white;
+}
+body.dark-theme header .header-box .header-actions .wish-and-theme .wishlist {
+  background-color: #061E40;
+  background-image: url(/assets/images/home-page/wish-icons/blue-heart.svg);
+}
+body.dark-theme header .header-box .header-actions .login-button {
+  background-color: #061E40;
+  color: white;
+}
+body.dark-theme header .header-box .header-actions .login-button svg path,
+body.dark-theme header .header-box .header-actions .login-button svg line {
+  stroke: #ffffff;
+}
+body.dark-theme main .search-area .search-ways .search-bar {
+  background-color: #061E40;
+}
+body.dark-theme main .search-area .search-ways .search-bar .search-bar-top form .search_input input {
+  background-color: transparent;
+}
+body.dark-theme main .search-area .search-ways .search-bar .search-bar-top form .search_input input::placeholder {
+  color: #ffffff;
+}
+body.dark-theme main .search-area .search-ways .search-bar .search-bar-top .bar_buttons .filter_open {
+  color: white;
+}
+body.dark-theme main .search-area .search-ways .search-bar .search-bar-top .bar_buttons .filter_open::before {
+  background-image: url(/assets/images/home-page/menu-icons/blue-open-menu.svg);
+}
+body.dark-theme main #vacancy-tabs .categories-text .categories-title h1 {
+  color: white;
+}
+body.dark-theme main #new-vacancies .vacancies-title {
+  color: white;
+}
+body.dark-theme main #new-vacancies .sticky-side .sticky-components .company {
+  color: white;
+}
+body.dark-theme main #new-vacancies .box__item {
+  color: white;
+}
+body.dark-theme main #new-vacancies .box__item p {
+  color: white;
+}
+body.dark-theme main #new-vacancies .box__item .box__main .box__span span {
+  color: white;
 }
