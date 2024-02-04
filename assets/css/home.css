@@ -143,6 +143,85 @@ header .header-box .header-actions .wish-and-theme .night-mode-btn {
   border: transparent;
 }
 
+.error-message {
+  color: red;
+}
+
+#dropmenu {
+  display: block;
+  background-color: #ffffff;
+  color: black !important;
+  width: 100%;
+  height: auto;
+  padding: 20px 15px 0px;
+  position: absolute;
+  height: 100%;
+  z-index: 15;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  left: 0;
+}
+#dropmenu ul {
+  list-style: none !important;
+  padding: 0;
+}
+#dropmenu ul .login-button {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000;
+  font-weight: normal;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+  background-color: #f3f6f9;
+  border-radius: 12px;
+}
+#dropmenu ul .ad-announcement-button {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  background-color: #1f9dff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  margin-left: 0px;
+  margin-top: 7px;
+  transition: 0.3s ease;
+  border: 1px solid #1f9dff;
+}
+#dropmenu ul .ad-announcement-button:hover {
+  border: 1px solid #1f9dff;
+  background-color: #fff;
+  color: #1f9dff;
+}
+#dropmenu ul .ad-announcement-button:hover #Line_1,
+#dropmenu ul .ad-announcement-button:hover #Line_2,
+#dropmenu ul .ad-announcement-button:hover #Ellipse_93 {
+  stroke: #1f9dff;
+}
+#dropmenu ul li {
+  position: relative;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 14px;
+}
+#dropmenu ul a {
+  color: rgb(0, 0, 0);
+  text-decoration: none !important;
+}
+
+#dropmenu.show {
+  transform: translateX(0);
+}
+
 main {
   font-family: "Poppins", sans-serif;
 }
@@ -302,7 +381,7 @@ main #vacancy-tabs .categories-text .categories-title h1::before {
 }
 main #vacancy-tabs .slider {
   width: 100%;
-  height: 200px;
+  height: 300px;
   background-color: transparent;
 }
 main #new-vacancies {

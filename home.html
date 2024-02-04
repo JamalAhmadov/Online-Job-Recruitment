@@ -27,7 +27,7 @@
             <div class="header-box">
                 <div>
                     <div class="header-logo">
-                        <button class="menu-button"></button>
+                        <button id="hamburger" class="menu-button"></button>
                         <a href="./home.html">
                             <img id="wmode__logo" src="./assets/images/home-page/logo/logo.svg" alt="hellojob.az-logo">
                             <img style="display: none;" id="nmode__logo"
@@ -37,7 +37,8 @@
                 </div>
                 <div class="header-actions">
                     <div class="user-buttons">
-                        <a class="login-button" href="">
+                        <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="login-button"
+                            href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="19.576" height="17.567"
                                 viewBox="0 0 19.576 17.567">
                                 <g id="log-in_1_" data-name="log-in (1)" transform="translate(0.994 0.75)">
@@ -78,6 +79,49 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="dropmenu">
+            <ul>
+                <a class="login-button" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19.576" height="17.567" viewBox="0 0 19.576 17.567">
+                        <g id="log-in_1_" data-name="log-in (1)" transform="translate(0.994 0.75)">
+                            <path id="Path_12" data-name="Path 12"
+                                d="M15,3h4.764c1.315,0,2.382.8,2.382,1.785v12.5c0,.986-1.066,1.785-2.382,1.785H15"
+                                transform="translate(-4.313 -3)" fill="none" stroke="#212844" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5"></path>
+                            <path id="Path_13" data-name="Path 13" d="M10,15.926l4.463-4.463L10,7"
+                                transform="translate(-3.776 -3.43)" fill="none" stroke="#212844" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5"></path>
+                            <line id="Line_5" data-name="Line 5" x1="11" transform="translate(-0.244 7.915)" fill="none"
+                                stroke="#212844" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                            </line>
+                        </g>
+                    </svg>
+                    Sayta daxil ol</a>
+                <a class="ad-announcement-button" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <g id="Group_821" data-name="Group 821" transform="translate(-1124 -49)">
+                            <g id="plus-circle" transform="translate(1131.154 56.154)">
+                                <line id="Line_1" data-name="Line 1" y2="6" transform="translate(2.846 -0.154)"
+                                    fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></line>
+                                <line id="Line_2" data-name="Line 2" x2="6" transform="translate(-0.154 2.846)"
+                                    fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></line>
+                            </g>
+                            <circle id="Ellipse_93" data-name="Ellipse 93" cx="9" cy="9" r="9"
+                                transform="translate(1125 50)" fill="none" stroke="#fff" stroke-width="2">
+                            </circle>
+                        </g>
+                    </svg>
+                    Elan yerləşdir</a>
+                <li><a href="./home.html">Bütün vakansiyalar </a></li>
+                <li><a href=""></a>Seçilmişlər</li>
+                <li><a href=""></a>Şirkətlər</li>
+                <li><a href=""></a>Blog</li>
+                <li><a href=""></a>Qaydalar</li>
+                <li><a href=""></a>Saytda reklam</li>
+            </ul>
         </div>
     </header>
 
@@ -124,6 +168,87 @@
                 </div>
                 <div class="slider">
                     <p>slider...</p>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                    <form id="loginForm" onsubmit="login(event)">
+                                        <label for="loginEmail">E-mail:</label>
+                                        <input type="email" id="loginEmail" name="email" required><br>
+
+                                        <label for="loginPassword">Password:</label>
+                                        <input type="password" id="loginPassword" name="password" required><br>
+
+                                        <button type="submit">Login</button>
+                                        <div class="errorMessages error-message"></div>
+                                    </form>
+
+                                    <a href="#" class="login-button"></a>
+                                    <button onclick="logout()">Logout</button>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Register
+                                    </button>
+
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- REGISTER Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="registerForm" onsubmit="register(event)">
+                                        <label for="name">Name:</label>
+                                        <input type="text" id="name" name="name"><br>
+
+                                        <label for="email">E-mail:</label>
+                                        <input type="email" id="email" name="email"><br>
+
+                                        <label for="password">Password:</label>
+                                        <input type="password" id="password" name="password"><br>
+
+                                        <label for="confirmPassword">Confirm Password:</label>
+                                        <input type="password" id="confirmPassword" name="confirmPassword"><br>
+
+                                        <input type="checkbox" id="acceptTerms">
+                                        <label for="acceptTerms">I accept the terms and conditions</label><br>
+
+                                        <button type="submit">Register</button>
+                                        <div id="errorMessages" class="error-message"></div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -188,6 +313,7 @@
             </div>
 
         </section>
+
 
     </main>
 

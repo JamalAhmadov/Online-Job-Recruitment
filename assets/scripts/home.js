@@ -77,26 +77,169 @@ renderJobs();
 const renderAuthors = async () => {
   const res = await fetch(`https://65be533bdcfcce42a6f24256.mockapi.io/jobs/`);
   const data = await res.json();
-  let kapitalbank = data.filter((item) => item.author.toLowerCase().includes("kapital"));
-  let capitalcount = document.getElementById('capital-count')
-  capitalcount.innerText = kapitalbank.length + " vakansiya"
+  let kapitalbank = data.filter((item) =>
+    item.author.toLowerCase().includes("kapital")
+  );
+  let capitalcount = document.getElementById("capital-count");
+  capitalcount.innerText = kapitalbank.length + " vakansiya";
 
-  let abbbank = data.filter((item) => item.author.toLowerCase().includes("abb"));
-  let abbcount = document.getElementById('abb-count')
-  abbcount.innerText = abbbank.length + " vakansiya"
+  let abbbank = data.filter((item) =>
+    item.author.toLowerCase().includes("abb")
+  );
+  let abbcount = document.getElementById("abb-count");
+  abbcount.innerText = abbbank.length + " vakansiya";
 
-  let xalqbank = data.filter((item) => item.author.toLowerCase().includes("xalq"));
-  let xalqcount = document.getElementById('xalq-count')
-  xalqcount.innerText = xalqbank.length + " vakansiya"
+  let xalqbank = data.filter((item) =>
+    item.author.toLowerCase().includes("xalq")
+  );
+  let xalqcount = document.getElementById("xalq-count");
+  xalqcount.innerText = xalqbank.length + " vakansiya";
 
-  let restaurants = data.filter((item) => item.author.toLowerCase().includes("res"));
-  let rescount = document.getElementById('res-count')
-  rescount.innerText = restaurants.length + " vakansiya"
-  
-  let asthetik = data.filter((item) => item.author.toLowerCase().includes("asthetik "));
-  let astcount = document.getElementById('ast-count')
-  astcount.innerText = asthetik.length + " vakansiya"
+  let restaurants = data.filter((item) =>
+    item.author.toLowerCase().includes("res")
+  );
+  let rescount = document.getElementById("res-count");
+  rescount.innerText = restaurants.length + " vakansiya";
 
+  let asthetik = data.filter((item) =>
+    item.author.toLowerCase().includes("asthetik ")
+  );
+  let astcount = document.getElementById("ast-count");
+  astcount.innerText = asthetik.length + " vakansiya";
 };
 
-renderAuthors ()
+renderAuthors();
+
+const toggleButton = document.getElementById("hamburger");
+const dropmenu = document.getElementById("dropmenu");
+
+toggleButton.addEventListener("click", function () {
+  dropmenu.classList.toggle("show");
+});
+
+// REGISTER
+
+var users = JSON.parse(localStorage.getItem("users")) || [];
+
+function register(event) {
+  event.preventDefault();
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
+  var acceptTerms = document.getElementById("acceptTerms").checked;
+
+  document.getElementById("errorMessages").innerHTML = "";
+
+  if (!name.trim()) {
+    displayErrorMessage("Adınız sahəsi boş saxlanılmamalıdır.");
+    return;
+  }
+
+  if (!isValidEmail(email.trim())) {
+    displayErrorMessage("Email sahəsi email formatında doldurulmalıdır.");
+    return;
+  }
+
+  if (!password.trim()) {
+    displayErrorMessage("Şifrə sahəsi boş saxlanılmamalıdır.");
+    return;
+  }
+
+  if (password.trim().length < 4) {
+    displayErrorMessage(
+      "Şifrə sahəsinin dəyəri göstəriləndən qısa qeyd edilib. Minimum simvol sayı 4 olmalıdır."
+    );
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    displayErrorMessage(
+      "Şifrənin təkrarı sahəsi Şifrə sahəsi ilə eyni olmalıdır"
+    );
+    return;
+  }
+
+  if (!acceptTerms) {
+    displayErrorMessage("Qaydalar qəbul edilməyib.");
+    return;
+  }
+
+  var existingUser = users.find(function (user) {
+    return user.email === email;
+  });
+
+  if (existingUser) {
+    displayErrorMessage("This email address is already registered.");
+    return;
+  }
+
+  var user = {
+    name: name,
+    email: email,
+    password: password,
+  };
+
+  users.push(user);
+  localStorage.setItem("users", JSON.stringify(users));
+  document.getElementById("registerForm").reset();
+  console.log("User registered:", user);
+  console.log("All users:", users);
+}
+
+function displayErrorMessage(message) {
+  var errorMessages = document.getElementById("errorMessages");
+  var errorMessageElement = document.createElement("div");
+  errorMessageElement.textContent = message;
+  errorMessages.appendChild(errorMessageElement);
+}
+
+function isValidEmail(email) {
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+//LOGIN
+
+var users = JSON.parse(localStorage.getItem('users')) || [];
+var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+if (loggedInUser) {
+    document.querySelector(".login-button").textContent = "Welcome, " + loggedInUser.name;
+}
+
+function login(event) {
+    event.preventDefault(); 
+    var email = document.getElementById("loginEmail").value;
+    var password = document.getElementById("loginPassword").value;
+    document.querySelector(".errorMessages").innerHTML = "";
+
+    if (!email.trim() || !password.trim()) {
+        displayErrorMessage("Email and password are required.");
+        return;
+    }
+
+    var loginUser = users.find(function(user) {
+        return user.email === email && user.password === password;
+    });
+
+    if (!loginUser) {
+        displayErrorMessage("Invalid email or password. Please try again.");
+        return;
+    }
+
+    document.querySelector(".login-button").textContent = "Welcome, " + loginUser.name;
+    localStorage.setItem('loggedInUser', JSON.stringify(loginUser));
+}
+
+function logout() {
+    localStorage.removeItem('loggedInUser');
+    document.querySelector(".login-button").textContent = "Sayta daxil ol";
+}
+
+function displayErrorMessage(message) {
+    var errorMessages = document.querySelector(".errorMessages");
+    var errorMessageElement = document.createElement("div");
+    errorMessageElement.textContent = message;
+    errorMessages.appendChild(errorMessageElement);
+}
