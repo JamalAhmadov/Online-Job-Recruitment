@@ -205,7 +205,7 @@ var users = JSON.parse(localStorage.getItem('users')) || [];
 var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
 if (loggedInUser) {
-    document.querySelector(".login-button").textContent = "Welcome, " + loggedInUser.name;
+    document.querySelectorAll(".login-button").textContent = loggedInUser.name;
 }
 
 function login(event) {
