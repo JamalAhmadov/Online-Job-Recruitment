@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/x-icon" href="https://www.hellojob.az/content/assets/images/favicon.svg?v=2">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -16,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
     <title>İş elanları</title>
 </head>
 
@@ -29,9 +30,9 @@
                     <div class="header-logo">
                         <button id="hamburger" class="menu-button"></button>
                         <a href="./home.html">
-                            <img id="wmode__logo" src="./assets/images/home-page/logo/logo.svg" alt="hellojob.az-logo">
+                            <img id="wmode__logo" src="/assets/images/home-page/logo/logo.svg" alt="hellojob.az-logo">
                             <img style="display: none;" id="nmode__logo"
-                                src="./assets/images/home-page/logo/night_mode_logo.svg" alt="hellojob.az-logo">
+                                src="/assets/images/home-page/logo/night_mode_logo.svg" alt="hellojob.az-logo">
                         </a>
                     </div>
                 </div>
@@ -142,12 +143,12 @@
                             <div class="search-bar-top">
                                 <form action="/search">
                                     <div class="search_input">
-                                        <input type="text seach" name="query" value="" placeholder="Məsələn, Dizayner">
+                                        <input id="search__input" type="text seach" name="query" value="" placeholder="Məsələn, Dizayner">
                                     </div>
                                     <button type="submit" class="search-button"><span>Axtar</span></button>
                                 </form>
                                 <div class="bar_buttons">
-                                    <button class="filter_open"><span>Ətraflı axtarış</span></button>
+                                    <button onclick="filterOpen()" class="filter_open"><span>Ətraflı axtarış</span></button>
                                 </div>
                             </div>
                             <div class="search-bar-bottom">
@@ -466,38 +467,70 @@
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+
+                                <div style="position: relative;" class="modal-header ">
+                                    <img style="position: absolute; left: 50%;"
+                                        src="/assets/images/home-page/menu-icons/loginico.svg" alt="">
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+                                    <div class="text-center login-text">
+                                        <h3>Hesabınıza daxil olun</h3>
+                                        <p>Xoş gəlmişsiniz!</p>
+                                        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=https%3A%2F%2Fwww.hellojob.az%2Fuser-login%2Fgoogle_verify&amp;client_id=36186815782-e8dkfbottlq01ioglfqg9fq49hkepvec.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&amp;access_type=offline&amp;approval_prompt=force"
+                                            class="google-login-btn" target="_blank">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/content/assets/images/resume/svg-icons/google.svg"
+                                                alt="">
+                                            Google ilə daxil ol
+                                        </a>
+                                        <p class="login-agreement-text">
+                                            Hesab yaradaraq Hellojob.az vebsayt <a href="/page/qaydalar" target="_blank"
+                                                style="color: #344054; text-decoration: underline; font-weight: 500;">qaydalarını</a>
+                                            qəbul edirəm.
+                                        </p>
+                                        <span>və ya</span>
+                                    </div>
 
                                     <form id="loginForm" onsubmit="login(event)">
-                                        <label for="loginEmail">E-mail:</label>
-                                        <input type="email" id="loginEmail" name="email" required><br>
-                                        <label for="loginPassword">Password:</label>
-                                        <input type="password" id="loginPassword" name="password" required><br>
-                                        <button type="submit">Login</button>
-                                        <div class="errorMessages error-message"></div>
+                                        <div class="login-inputs">
+                                            <label for="loginEmail">E-mail:</label>
+                                            <input placeholder="E-poçtunuzu yazın" type="email" id="loginEmail"
+                                                name="email" ><br>
+                                            <label for="loginPassword">Password:</label>
+                                            <input placeholder="*******" type="password" id="loginPassword"
+                                                name="password" ><br>
+                                        </div>
+                                        <div class="form-condition">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="save_me" class="form-control"
+                                                    id="save_pass">
+                                                <label for="save_pass">Yadda saxla</label>
+                                            </div>
+                                            <a href="#forgot-password" class="regs_bopup_open"
+                                                data-effect="mfp-zoom-in">Şifrəni unutmuşam</a>
+
+                                        </div>
+                                        <button id="login-btn" class="login-submit-btn" type="submit">Daxil ol</button>
+                                        <div id="loginError-message" class="error-message"></div>
+                                        <button type="button" class="go-register-btn" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            Qeydiyyatdan keç
+                                        </button>
                                     </form>
 
                                     <a href="#" class="login-button"></a>
-                                    <button onclick="logout()">Logout</button>
+                                    <!-- <button onclick="logout()">Logout</button> -->
 
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        Register
-                                    </button>
+                                <!-- <div class="modal-footer">
 
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
+
 
                     <!-- REGISTER Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -505,36 +538,47 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <img src="/assets/images/home-page/menu-icons/registeriscon.svg" alt="">
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+                                    <h3>Qeydiyyatdan keç</h3>
                                     <form id="registerForm" onsubmit="register(event)">
-                                        <label for="name">Name:</label>
-                                        <input type="text" id="name" name="name"><br>
+                                        <div class="register-inputs">
+                                            <label for="name">Adınız*</label>
+                                            <input type="text" id="name" name="name"><br>
 
-                                        <label for="email">E-mail:</label>
-                                        <input type="email" id="email" name="email"><br>
+                                            <label for="email">E-poçt*</label>
+                                            <input type="email" id="email" name="email"><br>
 
-                                        <label for="password">Password:</label>
-                                        <input type="password" id="password" name="password"><br>
+                                            <label for="password">Şifrə*</label>
+                                            <input type="password" id="password" name="password"><br>
 
-                                        <label for="confirmPassword">Confirm Password:</label>
-                                        <input type="password" id="confirmPassword" name="confirmPassword"><br>
+                                            <label for="confirmPassword">Şifrə təkrar*</label>
+                                            <input type="password" id="confirmPassword" name="confirmPassword"><br>
+                                        </div>
 
-                                        <input type="checkbox" id="acceptTerms">
-                                        <label for="acceptTerms">I accept the terms and conditions</label><br>
+                                        <div class="form-check">
+                                            <input type="checkbox" id="acceptTerms">
+                                            <label for="acceptTerms">Hesab yaradaraq Hellojob.az vebsayt <a
+                                                    href="/page/qaydalar" target="_blank"
+                                                    style="color: #344054; text-decoration: underline; font-weight: 500;">qaydalarını</a>qəbul
+                                                edirəm.</label>
+                                        </div>
 
-                                        <button type="submit">Register</button>
-                                        <div id="errorMessages" class="error-message"></div>
+
+                                        <button class="register-submit-btn" type="submit">Qeydiyyat ol</button>
+                                        <div id="errorMessages" class="errorMessages error-message"></div>
+                                        <button type="button" class="go-login-btn" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop">
+                                            Giriş səhifəsi
+                                        </button>
                                     </form>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                                <!-- <div class="modal-footer">
+
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -613,9 +657,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js
     "></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./assets/scripts/swiper/swiper-bundle.min.js"></script>
-    <script src="./assets/scripts/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../assets/scripts/home.js"></script>
 
 
 
