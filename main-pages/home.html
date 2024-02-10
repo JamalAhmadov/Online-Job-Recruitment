@@ -10,6 +10,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
     ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -83,7 +85,7 @@
         </div>
         <div id="dropmenu">
             <ul>
-                <a class="login-button" href="">
+                <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="login-button" href="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19.576" height="17.567" viewBox="0 0 19.576 17.567">
                         <g id="log-in_1_" data-name="log-in (1)" transform="translate(0.994 0.75)">
                             <path id="Path_12" data-name="Path 12"
@@ -99,6 +101,7 @@
                         </g>
                     </svg>
                     Sayta daxil ol</a>
+
                 <a class="ad-announcement-button" href="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                         <g id="Group_821" data-name="Group 821" transform="translate(-1124 -49)">
@@ -143,16 +146,18 @@
                             <div class="search-bar-top">
                                 <form action="/search">
                                     <div class="search_input">
-                                        <input id="search__input" type="text seach" name="query" value="" placeholder="Məsələn, Dizayner">
+                                        <input id="search__input" type="text seach" name="query" value=""
+                                            placeholder="Məsələn, Dizayner">
                                     </div>
                                     <button type="submit" class="search-button"><span>Axtar</span></button>
                                 </form>
                                 <div class="bar_buttons">
-                                    <button onclick="filterOpen()" class="filter_open"><span>Ətraflı axtarış</span></button>
+                                    <button onclick="filterOpen()" class="filter_open"><span>Ətraflı
+                                            axtarış</span></button>
                                 </div>
                             </div>
                             <div class="search-bar-bottom">
-                                <button class="searc-close"></button>
+                                <button onclick="filterClose()" class="searc-close"></button>
                                 <form action="">
                                     <div class="col-md-12">
                                         <div class="row">
@@ -428,15 +433,9 @@
                                                 </label>
                                             </div>
                                             <div class="col-md-5 search_results">
-                                                <button type="button"
-                                                    onclick="if (!window.__cfRLUnblockHandlers) return false; window.location.href='/search?search_type=filter';">Təmizlə</button>
+                                                <button class="clear-btn" type="button">Təmizlə</button>
                                                 <input type="hidden" name="search_type" value="filter">
-                                                <button data-action="search" id="srch-result-count-bar"><i
-                                                        id="search-btn-loader"
-                                                        class="fas fa-spinner fa-pulse d-none mr-4"
-                                                        aria-hidden="true"></i> <b
-                                                        class="result-finded-items-count mr-2">396</b> Elan
-                                                    tapıldı</button>
+                                                <button class="filtered-search-btn"> Elan tapıldı</button>
                                             </div>
                                         </div>
                                     </div>
@@ -459,8 +458,279 @@
                         </div>
                     </div>
                 </div>
-                <div class="slider">
-                    <p>slider...</p>
+                <div class="vacancies-box">
+                    <div class="position-relative">
+                        <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events">
+
+                            <div class="swiper-wrapper" aria-live="polite"
+                                style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                                <div class="swiper-slide swiper-slide-active"
+                                    style="width: 168.333px;margin-right: 32px;" role="group" aria-label="1 / 16">
+                                    <div class="slider-card ">
+                                        <a href="">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/content/assets/images/vacancies/upload.svg"
+                                                alt="Elan əlavə et">
+                                            <div class="slider-name">
+                                                <p>Elan əlavə et</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p>Peşəkarlar sizi tapsın</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide swiper-slide-next" id="189"
+                                    style="width: 168.333px; margin-right: 32px;" role="group" aria-label="2 / 16">
+                                    <div class="slider-card">
+                                        <a href="">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/maliyye-cat-6414340658330641434065833b-26NMIAq7bV3-yXq.svg"
+                                                alt="Maliyyə">
+                                            <div class="slider-name">
+                                                <p>Maliyyə</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>85</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="192" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="3 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/marketinq-4">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/marketinq-cat-641433fe9e5c6641433fe9e5d3-rKuhtYV5f4UPa85.svg"
+                                                alt="Marketinq">
+                                            <div class="slider-name">
+                                                <p>Marketinq</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>32</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="195" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="4 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/texnologiya">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/texnologiya-cat-641433be8b37d641433be8b38e-e9_0BJdsJbmUnVB.svg"
+                                                alt="Texnologiya">
+                                            <div class="slider-name">
+                                                <p>Texnologiya</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>27</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="291" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="5 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/restoran-isi-1">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2024/01/07/restoran-isi-cat-659a5eccb8689659a5eccb8698-pIenx2x8HBKIC0d.svg"
+                                                alt="Restoran işi">
+                                            <div class="slider-name">
+                                                <p>Restoran işi</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>19</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="190" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="6 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/satis-5">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/satis-cat-64143417860756414341786081-vC1K1njTVifH3Sh.svg"
+                                                alt="Satış">
+                                            <div class="slider-name">
+                                                <p>Satış</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>74</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="194" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="7 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/xidmet">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/xidmet-cat-6414342ff21226414342ff212e-m10Qat01rxfzfT3.svg"
+                                                alt="Xidmət">
+                                            <div class="slider-name">
+                                                <p>Xidmət</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>62</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="193" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="8 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/dizayn">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/dizayn-cat-64143423043a064143423043ab-dW7E0i95SRjZ4mG.svg"
+                                                alt="Dizayn">
+                                            <div class="slider-name">
+                                                <p>Dizayn</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>9</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="200" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="9 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/muxtelif">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/muxtelif-cat-6414343d74be26414343d74bed-Q30Ca59zmtb--84.svg"
+                                                alt="Müxtəlif">
+                                            <div class="slider-name">
+                                                <p>Müxtəlif</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>12</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="197" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="10 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/sehiyye">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/tibb-ve-eczaciliq-cat-6414344d875b26414344d875bd-N7Sq_u6Y1JguQLo.svg"
+                                                alt="Səhiyyə">
+                                            <div class="slider-name">
+                                                <p>Səhiyyə</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>13</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="199" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="11 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/tehsil-ve-elm">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/tehsil-ve-elm-cat-6414348e561bd6414348e561cb-lY0Gl-kw9Pyk_kP.svg"
+                                                alt="Təhsil və elm">
+                                            <div class="slider-name">
+                                                <p>Təhsil və elm</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>30</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="196" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="12 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/huquq">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/18/huquqsunasliq-cat-64159435cecf664159435ced07-M7Vk7vB63FHKEg1.svg"
+                                                alt="Hüquq">
+                                            <div class="slider-name">
+                                                <p>Hüquq</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>2</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" id="198" style="width: 168.333px; margin-right: 32px;"
+                                    role="group" aria-label="13 / 16">
+                                    <div class="slider-card">
+                                        <a href="/is-elanlari/inzibati">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/uploads/_categories/2023/03/17/inzibati-cat-641434674b8d6641434674b8e4-HuHF0Szj9u46Lut.svg"
+                                                alt="İnzibati">
+                                            <div class="slider-name">
+                                                <p>İnzibati</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p><span>44</span> iş elanı</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" style="width: 168.333px; margin-right: 32px;" role="group"
+                                    aria-label="14 / 16">
+                                    <div class="slider-card">
+                                        <a href="/vakansiyalar/internships">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/content/assets/images/tecrube.svg"
+                                                alt="Təcrübə">
+                                            <div class="slider-name">
+                                                <p>Təcrübə <br> proqramları</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" style="width: 168.333px; margin-right: 32px;" role="group"
+                                    aria-label="15 / 16">
+                                    <div class="slider-card">
+                                        <a href="/vakansiyalar/freelance">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/content/assets/images/freelance.svg"
+                                                alt="Freelance">
+                                            <div class="slider-name">
+                                                <p>Freelance <br> işlər</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" style="width: 168.333px; margin-right: 32px;" role="group"
+                                    aria-label="16 / 16">
+                                    <div class="slider-card">
+                                        <a href="/vakansiyalar/part-time">
+                                            <img loading="lazy"
+                                                src="https://www.hellojob.az/content/assets/images/part_time.svg"
+                                                alt="Part-time">
+                                            <div class="slider-name">
+                                                <p>Part-time <br> işlər</p>
+                                            </div>
+                                            <div class="slider-count">
+                                                <p></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                            aria-controls="swiper-wrapper-ac112fe9e99c83cd" aria-disabled="false"></div>
+                        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
+                            aria-controls="swiper-wrapper-ac112fe9e99c83cd" aria-disabled="false"></div>
+                    </div>
+
+
+
 
                     <!-- Modal -->
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -497,10 +767,10 @@
                                         <div class="login-inputs">
                                             <label for="loginEmail">E-mail:</label>
                                             <input placeholder="E-poçtunuzu yazın" type="email" id="loginEmail"
-                                                name="email" ><br>
+                                                name="email"><br>
                                             <label for="loginPassword">Password:</label>
                                             <input placeholder="*******" type="password" id="loginPassword"
-                                                name="password" ><br>
+                                                name="password"><br>
                                         </div>
                                         <div class="form-condition">
                                             <div class="form-check">
@@ -657,6 +927,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js
     "></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../assets/scripts/home.js"></script>
 

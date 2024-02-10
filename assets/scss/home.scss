@@ -419,7 +419,8 @@ main {
                 .search-bar-bottom {
                     width: 100%;
                     position: relative;
-                    display: none ; 
+                    display: none;
+                    padding: 30px 0px;
 
                     .searc-close {
 
@@ -437,6 +438,65 @@ main {
                         cursor: pointer;
                         border: 0;
 
+
+                    }
+
+                    select {
+                        width: 100%;
+                        height: 52px;
+                        background-color: #fff;
+                        border-radius: 6px;
+                        border: 0;
+                        outline: 0;
+                        -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.08);
+                        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.08);
+                        padding: 0px 10px;
+                        margin: 8px;
+
+
+                    }
+
+                    .search_checks {
+                        padding: 20px 10px 0px 20px;
+                        display: flex;
+                        gap: 10px;
+
+                        label {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    .search_results {
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+
+                        .clear-btn {
+                            border: 0;
+                            margin: 0px 10px;
+                            background-color: transparent;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .filtered-search-btn {
+
+                        width: 232px;
+                        height: 52px;
+                        border-radius: 6px;
+                        color: #fff;
+                        background-color: #1f9dff;
+                        font-size: 16px;
+                        font-weight: bold;
+                        transition: .2s ease;
+                        text-decoration: none;
+                        border: 0;
 
                     }
 
@@ -476,10 +536,107 @@ main {
             }
         }
 
-        .slider {
+        .vacancies-box {
             width: 100%;
-            height: 300px;
-            background-color: transparent;
+
+            .swiper {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 20px;
+
+                .swiper-slide {
+                    text-align: center;
+                    font-size: 18px;
+                    background: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+
+                    .slider-card {
+                        position: relative;
+                        width: 100%;
+                        height: 154px;
+                        white-space: nowrap;
+                        max-width: 170px;
+                        font-family: 'Poppins', sans-serif;
+
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            border-radius: 6px;
+                            align-items: center;
+                            flex-direction: column;
+                            border: 1px solid #EDEDED;
+                            padding: 22px 10px;
+                        }
+
+                        img {
+                            width: 48px;
+                            height: 48px;
+                            transition: .3s ease;
+                        }
+
+                        .slider-name {
+                            text-align: center;
+                            margin-top: 15px;
+                            color: #2196F3;
+                            font-size: 15px;
+                        }
+
+                        .slider-count {
+                            font-size: 14px;
+                            text-align: center;
+                            line-height: 18px;
+                            color: #A3A6AC;
+                            font-family: 'Samsung Sharp Sans';
+                        }
+                    }
+                }
+
+
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+
+                width: 48px;
+                height: 48px;
+                background-image: url("https://www.hellojob.az/content/assets/images/profile/svg-icons/arrow-right-dark.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                border-color: #e0e0e0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                transform: translateY(-50%);
+                margin-top: -3px;
+                background-color: white;
+                background-size: 25%;
+                z-index: 5;
+
+                &:after {
+                    height: 100%;
+                    width: 60px;
+                    top: 0;
+                    z-index: 5;
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    pointer-events: none;
+                }
+
+            }
+
+            .swiper-button-prev {
+                margin-left: -27px;
+                transform: translateY(-50%) rotate(180deg);
+                box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .swiper-button-next{
+                margin-right: -27px;
+            }
         }
 
         .login-text {
@@ -961,7 +1118,17 @@ main {
                     }
 
                     .search-bar-bottom {
-                        display: block;
+                        .search_checks {
+                            flex-wrap: wrap;
+
+                            label {
+                                font-size: 16px;
+                                width: 46%;
+                                margin-right: 10px;
+                                float: left;
+                                margin-bottom: 15px;
+                            }
+                        }
                     }
 
                 }
@@ -1090,6 +1257,7 @@ body.dark-theme {
 
                 }
             }
+
 
 
         }

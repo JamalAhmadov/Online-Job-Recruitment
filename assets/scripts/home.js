@@ -2,6 +2,8 @@ const theme__btn = document.getElementById("theme__btn");
 const wmode__logo = document.getElementById("wmode__logo");
 const nmode__logo = document.getElementById("nmode__logo");
 
+const myModal = bootstrap.Modal.getOrCreateInstance("#staticBackdrop");
+
 theme__btn.addEventListener("click", function () {
   document.body.classList.toggle("dark-theme");
   localStorage.setItem("mode", document.body.classList);
@@ -290,6 +292,14 @@ function loginDisplayErrorMessage(loginMessage) {
   loginErrorMessages.innerHTML = loginMessage;
 }
 
+const loginbtn = document.getElementById("login-btn");
+const loginControl = () => {
+  if (loggedInUser) {
+    myModal.hide();
+  }
+};
+
+loginbtn.addEventListener("click", loginControl);
 // ADD TO FAV
 
 const addToFav = async (id) => {
@@ -324,6 +334,23 @@ const addToFav = async (id) => {
 };
 
 const filterOpen = () => {
-  document.querySelector('.search-bar-bottom').style.display = "block"
-  document.querySelector('.search-bar-top').style.display = "none"
-}
+  document.querySelector(".search-bar-bottom").style.display = "flex";
+  document.querySelector(".search-bar-top").style.display = "none";
+};
+const filterClose = () => {
+  document.querySelector(".search-bar-bottom").style.display = "none";
+  document.querySelector(".search-bar-top").style.display = "flex";
+};
+
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  slidesPerView: 6,
+  direction: "horizontal",
+  loop: false,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
