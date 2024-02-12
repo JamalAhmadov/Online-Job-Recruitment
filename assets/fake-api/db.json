@@ -43,7 +43,151 @@
       "views": "77108",
       "author": "res- Daugherty",
       "id": "4"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/xidmet-cat-6414342ff21226414342ff212e-m10Qat01rxfzfT3.svg",
+      "title": "Xadimə",
+      "desc": " Elson Group MMC",
+      "date": "July",
+      "premium": false,
+      "salary": "",
+      "views": "2319",
+      "author": "Kapital bank",
+      "id": "5"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/tibb-ve-eczaciliq-cat-6414344d875b26414344d875bd-N7Sq_u6Y1JguQLo.svg",
+      "title": "title 2",
+      "desc": "desc 2",
+      "date": "May",
+      "premium": false,
+      "salary": "500-800",
+      "views": "47042",
+      "author": "Kapital bank",
+      "id": "6"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/inzibati-cat-641434674b8d6641434674b8e4-HuHF0Szj9u46Lut.svg",
+      "title": "title 3",
+      "desc": "desc 3",
+      "date": "October",
+      "premium": false,
+      "salary": "700",
+      "views": "1607",
+      "author": "Abb bank",
+      "id": "7"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/satis-cat-64143417860756414341786081-vC1K1njTVifH3Sh.svg",
+      "title": "title 4",
+      "desc": "desc 4",
+      "date": "August",
+      "premium": false,
+      "salary": "600-100",
+      "views": "77108",
+      "author": "res- Daugherty",
+      "id": "8"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/xidmet-cat-6414342ff21226414342ff212e-m10Qat01rxfzfT3.svg",
+      "title": "Xadimə",
+      "desc": " Elson Group MMC",
+      "date": "July",
+      "premium": false,
+      "salary": "",
+      "views": "2319",
+      "author": "Kapital bank",
+      "id": "9"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/tibb-ve-eczaciliq-cat-6414344d875b26414344d875bd-N7Sq_u6Y1JguQLo.svg",
+      "title": "title 2",
+      "desc": "desc 2",
+      "date": "May",
+      "premium": false,
+      "salary": "500-800",
+      "views": "47042",
+      "author": "Kapital bank",
+      "id": "10"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/inzibati-cat-641434674b8d6641434674b8e4-HuHF0Szj9u46Lut.svg",
+      "title": "title 3",
+      "desc": "desc 3",
+      "date": "October",
+      "premium": false,
+      "salary": "700",
+      "views": "1607",
+      "author": "Abb bank",
+      "id": "11"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/satis-cat-64143417860756414341786081-vC1K1njTVifH3Sh.svg",
+      "title": "title 4",
+      "desc": "desc 4",
+      "date": "August",
+      "premium": false,
+      "salary": "600-100",
+      "views": "77108",
+      "author": "res- Daugherty",
+      "id": "12"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/xidmet-cat-6414342ff21226414342ff212e-m10Qat01rxfzfT3.svg",
+      "title": "Xadimə",
+      "desc": " Elson Group MMC",
+      "date": "July",
+      "premium": false,
+      "salary": "",
+      "views": "2319",
+      "author": "Kapital bank",
+      "id": "13"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/tibb-ve-eczaciliq-cat-6414344d875b26414344d875bd-N7Sq_u6Y1JguQLo.svg",
+      "title": "title 2",
+      "desc": "desc 2",
+      "date": "May",
+      "premium": false,
+      "salary": "500-800",
+      "views": "47042",
+      "author": "xalq bank",
+      "id": "14"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/inzibati-cat-641434674b8d6641434674b8e4-HuHF0Szj9u46Lut.svg",
+      "title": "title 3",
+      "desc": "desc 3",
+      "date": "October",
+      "premium": false,
+      "salary": "700",
+      "views": "1607",
+      "author": "Abb bank",
+      "id": "15"
+    },
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/satis-cat-64143417860756414341786081-vC1K1njTVifH3Sh.svg",
+      "title": "title 4",
+      "desc": "desc 4",
+      "date": "August",
+      "premium": false,
+      "salary": "600-100",
+      "views": "77108",
+      "author": "res- Daugherty",
+      "id": "16"
     }
   ],
-  "favorites": []
+  "favorites": [
+    {
+      "image": "https://www.hellojob.az/uploads/_categories/2023/03/17/tibb-ve-eczaciliq-cat-6414344d875b26414344d875bd-N7Sq_u6Y1JguQLo.svg",
+      "title": "title 2",
+      "desc": "desc 2",
+      "date": "May",
+      "premium": false,
+      "salary": "500-800",
+      "views": "47042",
+      "author": "Kapital bank",
+      "id": "10"
+    }
+  ]
 }
