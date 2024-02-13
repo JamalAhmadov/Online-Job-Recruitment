@@ -25,7 +25,7 @@
     <title>İş elanları</title>
 </head>
 
-<body class="">
+<body>
 
     <header>
         <div class="container">
@@ -42,25 +42,30 @@
                 </div>
                 <div class="header-actions">
                     <div class="user-buttons">
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="login-button"
-                            href="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19.576" height="17.567"
-                                viewBox="0 0 19.576 17.567">
-                                <g id="log-in_1_" data-name="log-in (1)" transform="translate(0.994 0.75)">
-                                    <path id="Path_12" data-name="Path 12"
-                                        d="M15,3h4.764c1.315,0,2.382.8,2.382,1.785v12.5c0,.986-1.066,1.785-2.382,1.785H15"
-                                        transform="translate(-4.313 -3)" fill="none" stroke="#212844"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-                                    <path id="Path_13" data-name="Path 13" d="M10,15.926l4.463-4.463L10,7"
-                                        transform="translate(-3.776 -3.43)" fill="none" stroke="#212844"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-                                    <line id="Line_5" data-name="Line 5" x1="11" transform="translate(-0.244 7.915)"
-                                        fill="none" stroke="#212844" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="1.5"></line>
-                                </g>
-                            </svg>
-                            Sayta daxil ol</a>
-                        <a class="ad-announcement-button" href="">
+                        <div class="user-action">
+                            <a id="loginButton" class="login-button" href="#" onclick="openModal()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19.576" height="17.567"
+                                    viewBox="0 0 19.576 17.567">
+                                    <g id="log-in_1_" data-name="log-in (1)" transform="translate(0.994 0.75)">
+                                        <path id="Path_12" data-name="Path 12"
+                                            d="M15,3h4.764c1.315,0,2.382.8,2.382,1.785v12.5c0,.986-1.066,1.785-2.382,1.785H15"
+                                            transform="translate(-4.313 -3)" fill="none" stroke="#212844"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path id="Path_13" data-name="Path 13" d="M10,15.926l4.463-4.463L10,7"
+                                            transform="translate(-3.776 -3.43)" fill="none" stroke="#212844"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <line id="Line_5" data-name="Line 5" x1="11" transform="translate(-0.244 7.915)"
+                                            fill="none" stroke="#212844" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="1.5"></line>
+                                    </g>
+                                </svg>
+                                Sayta daxil ol</a>
+                            <div class="userdrpdown">
+                                <button>Log out</button>
+                                <button>User</button>
+                            </div>
+                        </div>
+                        <a onclick="checkLoggedInUser()" class="ad-announcement-button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                                 <g id="Group_821" data-name="Group 821" transform="translate(-1124 -49)">
                                     <g id="plus-circle" transform="translate(1131.154 56.154)">
@@ -87,7 +92,7 @@
         </div>
         <div id="dropmenu">
             <ul>
-                <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="login-button" href="">
+                <a id="" class="login-button" href="#" onclick="openModal()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19.576" height="17.567" viewBox="0 0 19.576 17.567">
                         <g id="log-in_1_" data-name="log-in (1)" transform="translate(0.994 0.75)">
                             <path id="Path_12" data-name="Path 12"
@@ -104,7 +109,7 @@
                     </svg>
                     Sayta daxil ol</a>
 
-                <a class="ad-announcement-button" href="">
+                <a class="ad-announcement-button" onclick="checkLoggedInUser()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                         <g id="Group_821" data-name="Group 821" transform="translate(-1124 -49)">
                             <g id="plus-circle" transform="translate(1131.154 56.154)">
@@ -469,12 +474,12 @@
                                 <div class="swiper-slide swiper-slide-active"
                                     style="width: 168.333px;margin-right: 32px;" role="group" aria-label="1 / 16">
                                     <div class="slider-card ">
-                                        <a href="">
+                                        <a href="../user-pages/addcv.html">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/content/assets/images/vacancies/upload.svg"
                                                 alt="Elan əlavə et">
                                             <div class="slider-name">
-                                                <p>Elan əlavə et</p>
+                                                <p>CV əlavə et</p>
                                             </div>
                                             <div class="slider-count">
                                                 <p>Peşəkarlar sizi tapsın</p>
@@ -483,7 +488,7 @@
                                     </div>
                                 </div>
                                 <div class="swiper-slide swiper-slide-next" id="189"
-                                    style="width: 168.333px; margin-right: 32px;" role="group" aria-label="2 / 16">
+                                     role="group" aria-label="2 / 16">
                                     <div class="slider-card">
                                         <a href="">
                                             <img loading="lazy"
@@ -498,7 +503,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="192" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="192" 
                                     role="group" aria-label="3 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/marketinq-4">
@@ -514,7 +519,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="195" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="195" 
                                     role="group" aria-label="4 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/texnologiya">
@@ -530,7 +535,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="291" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="291" 
                                     role="group" aria-label="5 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/restoran-isi-1">
@@ -546,7 +551,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="190" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="190" 
                                     role="group" aria-label="6 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/satis-5">
@@ -562,7 +567,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="194" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="194" 
                                     role="group" aria-label="7 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/xidmet">
@@ -578,7 +583,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="193" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="193" 
                                     role="group" aria-label="8 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/dizayn">
@@ -594,7 +599,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="200" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="200" 
                                     role="group" aria-label="9 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/muxtelif">
@@ -610,7 +615,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="197" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="197" 
                                     role="group" aria-label="10 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/sehiyye">
@@ -626,7 +631,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="199" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="199" 
                                     role="group" aria-label="11 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/tehsil-ve-elm">
@@ -642,7 +647,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="196" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="196" 
                                     role="group" aria-label="12 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/huquq">
@@ -658,7 +663,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="198" style="width: 168.333px; margin-right: 32px;"
+                                <div class="swiper-slide" id="198" 
                                     role="group" aria-label="13 / 16">
                                     <div class="slider-card">
                                         <a href="/is-elanlari/inzibati">
@@ -674,7 +679,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" style="width: 168.333px; margin-right: 32px;" role="group"
+                                <div class="swiper-slide"  role="group"
                                     aria-label="14 / 16">
                                     <div class="slider-card">
                                         <a href="/vakansiyalar/internships">
@@ -690,7 +695,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" style="width: 168.333px; margin-right: 32px;" role="group"
+                                <div class="swiper-slide"  role="group"
                                     aria-label="15 / 16">
                                     <div class="slider-card">
                                         <a href="/vakansiyalar/freelance">
@@ -706,7 +711,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" style="width: 168.333px; margin-right: 32px;" role="group"
+                                <div class="swiper-slide"  role="group"
                                     aria-label="16 / 16">
                                     <div class="slider-card">
                                         <a href="/vakansiyalar/part-time">
@@ -725,6 +730,8 @@
                             </div>
                         </div>
                         <!-- If we need navigation buttons -->
+                        <div class="swiper-scrollbar"></div>
+
                         <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
                             aria-controls="swiper-wrapper-ac112fe9e99c83cd" aria-disabled="false"></div>
                         <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
@@ -862,7 +869,7 @@
         <section id="new-vacancies">
             <div class="container">
                 <h2 class="vacancies-title">VakanSİYALAR</h2>
-                <div class="row">
+                <div class="row mobiledata">
                     <div class="col-lg-8">
                         <div id="data__box">
 

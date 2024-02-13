@@ -55,6 +55,24 @@ header .header-box .header-actions .user-buttons {
   display: flex;
   align-items: center;
 }
+header .header-box .header-actions .user-buttons .userdrpdown {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 0px;
+  width: 100%;
+  min-height: 50px;
+  z-index: 2;
+  position: absolute;
+}
+header .header-box .header-actions .user-buttons .userdrpdown button {
+  width: 100%;
+  background-color: white;
+}
+header .header-box .header-actions .user-buttons .userdrpdown button:hover {
+  background-color: #f3f6f9;
+}
 header .header-box .header-actions .user-buttons .login-button {
   width: 160px;
   height: 48px;
@@ -70,6 +88,12 @@ header .header-box .header-actions .user-buttons .login-button {
   border: 1px solid transparent;
   background-color: #f3f6f9;
   border-radius: 12px;
+}
+header .header-box .header-actions .user-buttons .user-action {
+  position: relative;
+}
+header .header-box .header-actions .user-buttons .user-action .userhover:hover .userdrpdown {
+  display: flex !important;
 }
 header .header-box .header-actions .user-buttons .ad-announcement-button {
   width: 160px;
@@ -264,7 +288,7 @@ main .search-area .search-tabs li:not(:last-child):after {
   font-weight: 500;
   color: #fff;
   font-size: 14px;
-  margin: 0 32px;
+  margin: 0 22px;
 }
 main .search-area .search-ways {
   z-index: 10;
@@ -462,6 +486,7 @@ main #vacancy-tabs .vacancies-box .swiper {
   margin-bottom: 20px;
 }
 main #vacancy-tabs .vacancies-box .swiper .swiper-slide {
+  padding: 0px 5px;
   text-align: center;
   font-size: 18px;
   display: flex;
@@ -503,6 +528,14 @@ main #vacancy-tabs .vacancies-box .swiper .swiper-slide .slider-card .slider-cou
   line-height: 18px;
   color: #A3A6AC;
   font-family: "Samsung Sharp Sans";
+}
+main #vacancy-tabs .vacancies-box .swiper-scrollbar {
+  background-color: #1f9dff;
+  position: static;
+  margin-top: -15px;
+  margin-bottom: 10px;
+  height: 2px;
+  z-index: 2;
 }
 main #vacancy-tabs .vacancies-box .swiper-button-next,
 main #vacancy-tabs .vacancies-box .swiper-button-prev {
@@ -921,6 +954,9 @@ footer .footer-bottom .social {
   .container {
     max-width: 720px;
   }
+  .swiper-scrollbar {
+    display: none;
+  }
 }
 @media screen and (min-width: 992px) {
   .container {
@@ -1013,6 +1049,28 @@ footer .footer-bottom .social {
   main #new-vacancies .box__item p {
     font-size: 12px;
   }
+  main #vacancy-tabs .vacancies-box .swiper .swiper-slide {
+    padding: 0px 4px;
+  }
+  main #vacancy-tabs .vacancies-box .swiper .swiper-slide .slider-card {
+    height: 135px;
+    padding: 4px;
+  }
+  main #vacancy-tabs .vacancies-box .swiper .swiper-slide .slider-card p {
+    margin: 0;
+    padding: 0;
+  }
+  main #vacancy-tabs .vacancies-box .swiper .swiper-slide .slider-card .slider-name {
+    font-size: 13px;
+    margin: 5px 0px;
+  }
+  main #vacancy-tabs .vacancies-box .swiper .swiper-slide .slider-card .slider-count {
+    font-size: 10px;
+  }
+  main #vacancy-tabs .vacancies-box .swiper-button-next,
+  main #vacancy-tabs .vacancies-box .swiper-button-prev {
+    display: none;
+  }
 }
 body.dark-theme {
   background-color: #081833;
@@ -1055,6 +1113,9 @@ body.dark-theme main .search-area .search-ways .search-bar .search-bar-bottom bu
 body.dark-theme main #vacancy-tabs .categories-text .categories-title h1 {
   color: white;
 }
+body.dark-theme main #vacancy-tabs .vacancies-box .swiper .swiper-slide .slider-card a {
+  border: 1px solid #003075;
+}
 body.dark-theme main #new-vacancies .vacancies-title {
   color: white;
 }
@@ -1063,6 +1124,7 @@ body.dark-theme main #new-vacancies .sticky-side .sticky-components .company {
 }
 body.dark-theme main #new-vacancies .box__item {
   color: white;
+  border: 1px solid #003075;
 }
 body.dark-theme main #new-vacancies .box__item p {
   color: white;

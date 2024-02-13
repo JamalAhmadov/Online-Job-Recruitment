@@ -17,9 +17,11 @@
   font-family: "Inter", sans-serif;
 }
 #profile-section .profile-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   width: 290px;
   height: 100vh;
-  position: fixed;
   background-color: #212944;
   padding: 24px;
   display: flex;
@@ -73,12 +75,10 @@
   filter: unset;
 }
 #profile-section .profile-content {
-  width: 80%;
+  width: 100%;
   right: 0;
   min-height: 100vh;
-  position: fixed;
   display: flex;
-  padding: 0px 20px 0px 5px;
   flex-direction: column;
 }
 #profile-section .profile-content .profile-header {
@@ -90,6 +90,49 @@
   height: 60px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   top: 0;
+  padding-right: 20px;
+}
+#profile-section .profile-content .profile-header .header-left {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+#profile-section .profile-content .profile-header .header-left #hamburger {
+  background-image: url("https://www.hellojob.az/content/assets/images/profile/svg-icons/burger.svg");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-color: transparent;
+  margin-right: 16px;
+  cursor: pointer;
+  background-size: 20px;
+  transition: 0.2s linear;
+  display: none;
+}
+#profile-section .profile-content .profile-header .header-left img {
+  height: 30px;
+  width: 142px;
+}
+#profile-section .profile-content .profile-header .backtohome {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #A3A6AC;
+  border: 1px solid #F4F6F9;
+  border-radius: 8px;
+  margin-right: 24px;
+  padding: 11px 27px;
+  white-space: nowrap;
+}
+#profile-section .profile-content .profile-header .login-button {
+  padding: 8px 16px;
+  background-color: #F4F6F9;
+  border-radius: 4px;
+  color: black;
 }
 #profile-section .profile-content .profile-box {
   padding-top: 18px;
@@ -98,6 +141,7 @@
   font-size: 16px;
   line-height: 24px;
   color: #667085;
+  padding: 20px;
 }
 #profile-section .profile-content .profile-box .profile-text h1 {
   font-weight: 500;
@@ -111,7 +155,7 @@
   box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
   border-radius: 8px;
   color: #000D4A;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   transition: 0.2s linear;
@@ -124,4 +168,283 @@
   font-size: 20px;
   line-height: normal;
   letter-spacing: -0.02em;
+}
+#profile-section .profile-content .addcv-box {
+  padding: 10px;
+}
+#profile-section .profile-content .addcv-box .addcv-title {
+  font-family: "Inter" !important;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #2196F3;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+#profile-section .profile-content .addcv-box .addcv-title::before {
+  content: "";
+  width: 3px;
+  height: 24px;
+  background-color: #2196F3;
+  display: block;
+  margin-right: 16px;
+  border-radius: 16px;
+}
+#profile-section .profile-content .addcv-box .progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+#profile-section .profile-content .addcv-box .progress li {
+  width: 100%;
+  margin-right: 5px;
+}
+#profile-section .profile-content .addcv-box .progress li .active {
+  color: #2196F3;
+  border-color: #2196F3;
+}
+#profile-section .profile-content .addcv-box .progress li a {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #A3A6AC;
+  padding-bottom: 8px;
+  border-bottom: 4px solid #F4F6F9;
+  width: 100%;
+  white-space: nowrap;
+}
+#profile-section .profile-content .addcv-box .tab-content {
+  padding: 24px;
+  border: 1px solid #F4F6F9;
+  border-radius: 8px;
+  color: #212944;
+}
+#profile-section .profile-content .addcv-box .tab-content .form-control {
+  border-radius: 8px;
+  background-color: white;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  padding: 16px 20px;
+  height: auto;
+}
+#profile-section .profile-content .addcv-box .tab-content .form-group {
+  margin: 10px 0px;
+}
+#profile-section .profile-content .addcv-box .tab-content .title {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+  color: #2196F3;
+}
+#profile-section .profile-content .addcv-box .tab-content .cv-group {
+  display: flex;
+  align-items: center;
+}
+#profile-section .profile-content .addcv-box .tab-content .cv-group .image-input {
+  width: 166px;
+  height: 166px;
+  background-color: #F4F6F9;
+  border-radius: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+}
+#profile-section .profile-content .addcv-box .tab-content .cv-group .image-input input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+#profile-section .profile-content .addcv-box .tab-content .cv-group .image-input .uploaded_image_label img {
+  position: unset;
+  opacity: 1;
+  border-radius: 0;
+  width: 50px;
+  height: 50px;
+}
+#profile-section .profile-content .addcv-box .tab-content .cv-group .image-input img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+#profile-section .profile-content .addcv-box .tab-content .cv-group label:not(.label) {
+  border: 1px solid #E4E7EC;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#profile-section .profile-content .addcv-box .tab-content .form-group-for-phone input {
+  padding-left: 78px;
+  padding-right: 65px;
+}
+#profile-section .profile-content .addcv-box .tab-content .form-group-for-phone select {
+  position: absolute;
+  top: 13px;
+  bottom: 13px;
+  padding: 0 25px 0 12px;
+  left: 1px;
+  width: auto;
+  border-radius: 0;
+  border: none !important;
+  border-right: 1px solid #ced4da;
+  background-position: right 10px center;
+  background-color: transparent !important;
+}
+#profile-section .profile-content .addcv-box .post-btn-div {
+  display: flex;
+  margin-top: 4px;
+  width: 100%;
+  justify-content: flex-end;
+}
+#profile-section .profile-content .addcv-box .post-btn-div .post-cv {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  border-radius: 8px;
+  background-color: #2196F3;
+  color: white;
+  padding: 10.5px 38px;
+  min-width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  border: 1px solid transparent;
+  transition: 0.2s linear;
+}
+
+#dropmenu {
+  display: block;
+  background-color: #212944;
+  color: black !important;
+  width: 100%;
+  height: auto;
+  padding: 20px 15px 0px;
+  position: absolute;
+  top: 60px;
+  height: 100%;
+  z-index: 15;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  left: 0;
+}
+#dropmenu ul {
+  margin-bottom: 24px;
+}
+#dropmenu ul li {
+  margin-bottom: 12px;
+}
+#dropmenu ul li a {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+#dropmenu ul li a span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+}
+#dropmenu ul li a span img {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(0%) saturate(3312%) hue-rotate(332deg) brightness(91%) contrast(109%);
+}
+#dropmenu ul li a:hover,
+#dropmenu ul li a.active {
+  background-color: #2C375A;
+  color: white;
+}
+#dropmenu ul li a:hover span,
+#dropmenu ul li a.active span {
+  border-color: white;
+}
+#dropmenu ul li a:hover span img,
+#dropmenu ul li a.active span img {
+  filter: unset;
+}
+#dropmenu .backtohome {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: white;
+  padding: 10.5px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #F4F6F9;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#dropmenu.show {
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 768px) {
+  .profile-header {
+    justify-content: space-between !important;
+    background-color: #212944;
+  }
+  .profile-header .backtohome {
+    display: none !important;
+  }
+  #hamburger {
+    display: flex !important;
+  }
+  .post-btn-div {
+    justify-content: center !important;
+  }
+  .profile-sidebar {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .cv-group {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center !important;
+    gap: 10px;
+  }
+  .post-btn-div {
+    justify-content: center !important;
+  }
+  .post-btn-div .post-cv {
+    min-width: 100px !important;
+    width: 100px !important;
+  }
 }

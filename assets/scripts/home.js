@@ -33,7 +33,6 @@ window.onload = () => {
   btnControl();
 };
 
-
 const renderAuthors = async () => {
   const res = await fetch(`http://localhost:3000/jobdata`);
   const data = await res.json();
@@ -210,11 +209,25 @@ function isValidEmail(email) {
 
 //LOGIN
 
-var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-
-if (loggedInUser) {
-  document.querySelectorAll(".login-button").textContent = loggedInUser.name;
+function openModal() {
+  if (!loggedInUser) {
+    myModal.show();
+  }
+  else{
+    window.location.href = "../user-pages/profile.html"; 
+  }
 }
+
+///
+
+var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+if (loggedInUser) {
+  document.querySelectorAll(".login-button").forEach(function(button) {
+    button.textContent = loggedInUser.name;
+  });
+}
+
+
 
 function login(event) {
   event.preventDefault();
@@ -236,7 +249,11 @@ function login(event) {
     return;
   }
 
-  document.querySelector(".login-button").textContent = loginUser.name;
+
+  userbtn = document.querySelector(".login-button")
+  userbtn.textContent = loginUser.name;
+  userbtn.classList.add("userhover");
+
   localStorage.setItem("loggedInUser", JSON.stringify(loginUser));
 }
 
@@ -258,6 +275,17 @@ const loginControl = () => {
 };
 
 loginbtn.addEventListener("click", loginControl);
+
+function checkLoggedInUser() {
+  var loggedInUser = localStorage.getItem("loggedInUser");
+
+  if (loggedInUser) {
+    window.location.href = "../user-pages/addcv.html"; 
+  } else {
+    myModal.show();
+    console.log("modal");
+  }
+}
 // ADD TO FAV
 
 const addToFav = async (id) => {
@@ -300,16 +328,40 @@ const filterClose = () => {
   document.querySelector(".search-bar-top").style.display = "flex";
 };
 
+
 const swiper = new Swiper(".swiper", {
-  // Optional parameters
   slidesPerView: 6,
   direction: "horizontal",
   loop: false,
-
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 6,
+    },
+    992: {
+      slidesPerView: 5,
+    },
+    768: {
+      slidesPerView: 4,
+      navigation: {
+        nextEl: null,
+        prevEl: null,
+      },
+    },
+    0: {
+      slidesPerView: 3,
+      
+      navigation: {
+        nextEl: null,
+        prevEl: null,
+      },
+    },
   },
 });
 
@@ -327,7 +379,6 @@ async function main() {
   let rows = 10;
 
   function displayList(arrData, rowPerPage, page) {
-
     const postsEl = document.querySelector("#data__box");
     postsEl.innerHTML = "";
     page--;

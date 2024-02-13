@@ -16,6 +16,9 @@ body {
     scroll-behavior: smooth;
 }
 
+
+
+
 header {
     width: 100%;
     padding: 25px 0px;
@@ -62,6 +65,28 @@ header {
                 display: flex;
                 align-items: center;
 
+                .userdrpdown {
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 7px 0px;
+                    width: 100%;
+                    min-height: 50px;
+                    z-index: 2;
+                    position: absolute;
+
+
+                    button {
+                        width: 100%;
+                        background-color: white;
+
+                        &:hover {
+                            background-color: #f3f6f9;
+                        }
+                    }
+                }
+
                 .login-button {
                     width: 160px;
                     height: 48px;
@@ -79,6 +104,21 @@ header {
                     border-radius: 12px;
 
                 }
+
+
+                .user-action {
+                    position: relative;
+
+                    .userhover {
+                        &:hover {
+                            .userdrpdown {
+                                display: flex !important;
+                            }
+                        }
+                    }
+
+                }
+
 
                 .ad-announcement-button {
                     width: 160px;
@@ -313,7 +353,7 @@ main {
                         font-weight: 500;
                         color: #fff;
                         font-size: 14px;
-                        margin: 0 32px;
+                        margin: 0 22px;
                     }
                 }
             }
@@ -550,6 +590,7 @@ main {
                 margin-bottom: 20px;
 
                 .swiper-slide {
+                    padding: 0px 5px;
                     text-align: center;
                     font-size: 18px;
                     display: flex;
@@ -602,6 +643,17 @@ main {
 
 
             }
+
+            .swiper-scrollbar {
+                background-color: #1f9dff;
+                position: static;
+                margin-top: -15px;
+                margin-bottom: 10px;
+                height: 2px;
+                z-index: 2;
+
+            }
+
 
             .swiper-button-next,
             .swiper-button-prev {
@@ -1129,6 +1181,13 @@ footer {
     .container {
         max-width: 720px;
     }
+
+    .swiper-scrollbar {
+        display: none;
+    }
+
+
+
 }
 
 @media screen and (min-width: 992px) {
@@ -1275,6 +1334,48 @@ footer {
             }
         }
 
+
+
+
+        #vacancy-tabs {
+            .vacancies-box {
+                .swiper {
+                    .swiper-slide {
+                        padding: 0px 4px;
+
+                        .slider-card {
+                            height: 135px;
+                            padding: 4px;
+
+                            p {
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            a {}
+
+                            img {}
+
+                            .slider-name {
+                                font-size: 13px;
+                                margin: 5px 0px;
+                            }
+
+                            .slider-count {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .swiper-button-next,
+                .swiper-button-prev {
+                    display: none;
+                }
+            }
+        }
+
+
     }
 
 }
@@ -1368,12 +1469,17 @@ body.dark-theme {
 
                 }
             }
-
-
+            .vacancies-box .swiper .swiper-slide .slider-card a {
+                border: 1px solid #003075;
+        }
 
         }
 
+
+
+
         #new-vacancies {
+
             .vacancies-title {
                 color: white;
             }
@@ -1388,6 +1494,7 @@ body.dark-theme {
 
             .box__item {
                 color: white;
+                border: 1px solid #003075;
 
                 p {
                     color: white;

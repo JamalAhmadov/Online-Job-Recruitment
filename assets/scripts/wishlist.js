@@ -1,5 +1,13 @@
 let data__container = document.getElementById("data__container");
 
+
+var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+if (loggedInUser) {
+  document.querySelectorAll(".login-button").forEach(function(button) {
+    button.textContent = loggedInUser.name;
+  });
+}
+
 const API = "http://localhost:3000/favorites/";
 values = [];
 
@@ -58,3 +66,4 @@ const deleteData = (id) => {
       console.error("Error deleting resource:", error);
     });
 };
+
