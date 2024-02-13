@@ -71,10 +71,20 @@ renderAuthors();
 
 const toggleButton = document.getElementById("hamburger");
 const dropmenu = document.getElementById("dropmenu");
+const mainElement = document.getElementsByTagName("main")[0] 
+const footerElement = document.getElementsByTagName("footer")[0] 
 
 toggleButton.addEventListener("click", function () {
   dropmenu.classList.toggle("show");
+  if (dropmenu.classList.contains("show")) { 
+    mainElement.style.display = "none";
+    footerElement.style.display = "none";
+  } else {
+    mainElement.style.display = "block";
+    footerElement.style.display = "block";
+  }
 });
+
 
 // SEARCH DATA
 
@@ -212,9 +222,8 @@ function isValidEmail(email) {
 function openModal() {
   if (!loggedInUser) {
     myModal.show();
-  }
-  else{
-    window.location.href = "../user-pages/profile.html"; 
+  } else {
+    window.location.href = "../user-pages/profile.html";
   }
 }
 
@@ -222,12 +231,10 @@ function openModal() {
 
 var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 if (loggedInUser) {
-  document.querySelectorAll(".login-button").forEach(function(button) {
+  document.querySelectorAll(".login-button").forEach(function (button) {
     button.textContent = loggedInUser.name;
   });
 }
-
-
 
 function login(event) {
   event.preventDefault();
@@ -249,8 +256,7 @@ function login(event) {
     return;
   }
 
-
-  userbtn = document.querySelector(".login-button")
+  userbtn = document.querySelector(".login-button");
   userbtn.textContent = loginUser.name;
   userbtn.classList.add("userhover");
 
@@ -280,7 +286,7 @@ function checkLoggedInUser() {
   var loggedInUser = localStorage.getItem("loggedInUser");
 
   if (loggedInUser) {
-    window.location.href = "../user-pages/addcv.html"; 
+    window.location.href = "../user-pages/addcv.html";
   } else {
     myModal.show();
     console.log("modal");
@@ -328,7 +334,6 @@ const filterClose = () => {
   document.querySelector(".search-bar-top").style.display = "flex";
 };
 
-
 const swiper = new Swiper(".swiper", {
   slidesPerView: 6,
   direction: "horizontal",
@@ -338,7 +343,7 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
   scrollbar: {
-    el: '.swiper-scrollbar',
+    el: ".swiper-scrollbar",
   },
   breakpoints: {
     1200: {
@@ -356,7 +361,7 @@ const swiper = new Swiper(".swiper", {
     },
     0: {
       slidesPerView: 3,
-      
+
       navigation: {
         nextEl: null,
         prevEl: null,

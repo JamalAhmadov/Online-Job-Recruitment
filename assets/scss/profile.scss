@@ -302,6 +302,10 @@
                         width: 120px;
                         height: 120px;
 
+                        #cvimage {
+                            object-fit: contain;
+                        }
+
                         input {
                             position: absolute;
                             width: 100%;
@@ -330,7 +334,7 @@
                             position: absolute;
                             left: 0;
                             top: 0;
-                            opacity: 0;
+
                         }
                     }
 
@@ -401,6 +405,32 @@
             }
 
 
+        }
+
+        .myitems-box {
+            padding: 20px;
+            .myitems-title {
+                font-family: "Inter" !important;
+                font-weight: 700;
+                font-size: 17px;
+                line-height: 21px;
+                text-transform: uppercase;
+                color: #2196F3;
+                display: flex;
+                align-items: center;
+                margin-bottom: 24px;
+
+                &::before {
+                    content: "";
+                    width: 3px;
+                    height: 24px;
+                    background-color: #2196F3;
+                    display: block;
+                    margin-right: 16px;
+                    border-radius: 16px;
+                }
+
+            }
         }
     }
 }
@@ -501,7 +531,8 @@
             display: none !important;
         }
     }
-    #hamburger{
+
+    #hamburger {
         display: flex !important;
     }
 

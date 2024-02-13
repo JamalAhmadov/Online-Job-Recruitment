@@ -123,14 +123,6 @@
                     <div>
                         <h2 class="addcv-title">Cv yerləşdİr</h2>
                     </div>
-                    <!-- <div>
-                        <ul class="progress">
-                            <li><a href="#tab1" class="tab1 step_btn active">1. Şəxsi məlumatlar</a></li>
-                            <li><a href="#tab2" class="tab2 step_btn">2. İş təcrübəniz</a></li>
-                            <li><a href="#tab3" class="tab3 step_btn">3. Təhsil haqqında</a></li>
-                            <li><a href="#tab4" class="tab4 step_btn">4. Digər məlumatlar</a></li>
-                        </ul>
-                    </div> -->
                     <div id="tab1">
                         <div class="tab-content">
                             <div class="row d-flex mb-5">
@@ -141,16 +133,17 @@
                                     <div>
                                         <div class="cv-group">
                                             <div class="image-input">
-                                                <input type="file" name="cvimage" id="cv-img"
+                                                <input type="file"  id="fimage"
                                                     accept="image/png, image/jpeg, image/svg, image/gif, image/jpg">
-                                                <img loading="lazy" id="cvimage" src="#">
+                                                <img loading="lazy" id="cvimage" src="">
+                                                
                                                 <span class="uploaded_image_label">
                                                     <img loading="lazy"
                                                         src="https://www.hellojob.az/content/assets/images/profile/svg-icons/user.svg"
                                                         class="m-0" alt="">
                                                 </span>
                                             </div>
-                                            <label for="cv-img">
+                                            <label for="fimage">
                                                 <img loading="lazy"
                                                     src="https://www.hellojob.az/content/assets/images/profile/svg-icons/upload2.svg"
                                                     alt="">
@@ -162,15 +155,15 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="">Ad</label>
-                                                    <input type="text" name="" value=""
-                                                        class="form-control req_inp req_inp" placeholder="Adınız">
+                                                    <input type="text" id="cv__name" name="" value=""
+                                                        class="form-control  " placeholder="Adınız">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="">Doğum tarixi</label>
-                                                    <input type="text" name="bday" value=""
-                                                        class="custom_date form-control type_inp req_inp"
+                                                    <label for="cv__bday">Doğum tarixi</label>
+                                                    <input id="cv__bday" type="date" name="bday" value=""
+                                                        class="custom_date form-control "
                                                         placeholder="31 - 01 - 2002" inputmode="verbatim"
                                                         im-insert="false">
                                                 </div>
@@ -179,7 +172,7 @@
                                                 <div class="form-group form-group-for-phone"><label>Mobil
                                                         nömrəniz</label>
                                                     <div class="position-relative d-flex">
-                                                        <select name="" class="shadow-none form-control border-0">
+                                                        <select  id="cv__pcode" name="cv__pcode" class="shadow-none form-control border-0">
                                                             <option value="070">070</option>
                                                             <option value="077">077</option>
                                                             <option value="050">050</option>
@@ -187,37 +180,38 @@
                                                             <option value="010">010</option>
                                                             <option value="055">055</option>
                                                             <option value="099">099</option>
-                                                        </select> <input id="phone" inputmode="verbatim" type="text"
-                                                            name="phone" placeholder="Mobil nömrənizi qeyd edin"
-                                                            class="form-control phone-input req_inp" im-insert="true">
+                                                        </select>
+                                                        <input id="cv__phone" maxlength="7" minlength="7"  type="text"
+                                                            placeholder="Mobil nömrənizi qeyd edin"
+                                                            class="form-control phone-input ">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-0">
-                                                    <label for="">Minimum əmək haqqı AZN</label>
-                                                    <input type="text" name="min_salary" maxlength="11"
+                                                    <label for="min_salary">Minimum əmək haqqı AZN</label>
+                                                    <input type="number" name="min_salary" maxlength="11"
                                                         placeholder="Məs:1500" value=""
-                                                        class="form-control type_inp req_inp" id="">
+                                                        class="form-control " id="cv__salary">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-0 mb-32">
                                                     <label for="">Vəzifə</label>
                                                     <input type="text" name="profession_main" placeholder="Vəzifəniz"
-                                                        value="" class="form-control type_inp req_inp" id="">
+                                                        value="" class="form-control " id="cv__prof">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group mb-0 mb-32">
                                                     <label for="">İş rejimi</label>
-                                                    <select name="work_type"
-                                                        class="form-control type_select chosen-select select_info_title req_inp">
-                                                        <option value="1">Tam-ştat</option>
-                                                        <option value="2">Frilans</option>
-                                                        <option value="3">Part-time</option>
-                                                        <option value="4">Təcrübəçi</option>
-                                                        <option value="5">Uzaqdan</option>
+                                                    <select id="cv__work" name="work_type"
+                                                        class="form-control ">
+                                                        <option value="Tam-ştat">Tam-ştat</option>
+                                                        <option value="Frilans">Frilans</option>
+                                                        <option value="Part-time">Part-time</option>
+                                                        <option value="Təcrübəçi">Təcrübəçi</option>
+                                                        <option value="Uzaqdan">Uzaqdan</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -229,7 +223,7 @@
 
                         </div>
                         <div class="post-btn-div">
-                            <a href="#" class="post-cv ">Növbəti</a>
+                            <a href="#" id="cv__post" class="post-cv ">Növbəti</a>
                         </div>
                     </div>
 
@@ -240,6 +234,7 @@
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../assets/scripts/addcv.js"></script>
 </body>
 

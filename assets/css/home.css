@@ -1132,3 +1132,16 @@ body.dark-theme main #new-vacancies .box__item p {
 body.dark-theme main #new-vacancies .box__item .box__main .box__span span {
   color: white;
 }
+body.dark-theme #dropmenu {
+  background-color: #081833;
+  color: white !important;
+}
+body.dark-theme #dropmenu .login-button {
+  background-color: transparent;
+}
+body.dark-theme #dropmenu li {
+  border-color: #003075 !important;
+}
+body.dark-theme #dropmenu a {
+  color: white !important;
+}

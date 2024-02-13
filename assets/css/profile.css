@@ -258,6 +258,9 @@
   width: 120px;
   height: 120px;
 }
+#profile-section .profile-content .addcv-box .tab-content .cv-group .image-input #cvimage {
+  object-fit: contain;
+}
 #profile-section .profile-content .addcv-box .tab-content .cv-group .image-input input {
   position: absolute;
   width: 100%;
@@ -282,7 +285,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  opacity: 0;
 }
 #profile-section .profile-content .addcv-box .tab-content .cv-group label:not(.label) {
   border: 1px solid #E4E7EC;
@@ -335,6 +337,29 @@
   width: max-content;
   border: 1px solid transparent;
   transition: 0.2s linear;
+}
+#profile-section .profile-content .myitems-box {
+  padding: 20px;
+}
+#profile-section .profile-content .myitems-box .myitems-title {
+  font-family: "Inter" !important;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #2196F3;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+#profile-section .profile-content .myitems-box .myitems-title::before {
+  content: "";
+  width: 3px;
+  height: 24px;
+  background-color: #2196F3;
+  display: block;
+  margin-right: 16px;
+  border-radius: 16px;
 }
 
 #dropmenu {

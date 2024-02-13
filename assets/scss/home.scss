@@ -1469,9 +1469,10 @@ body.dark-theme {
 
                 }
             }
+
             .vacancies-box .swiper .swiper-slide .slider-card a {
                 border: 1px solid #003075;
-        }
+            }
 
         }
 
@@ -1504,6 +1505,23 @@ body.dark-theme {
                     color: white;
                 }
             }
+        }
+    }
+
+    #dropmenu {
+        background-color: #081833;
+        color: white !important;
+
+        .login-button {
+            background-color: transparent;
+        }
+
+        li {
+            border-color: #003075 !important;
+        }
+
+        a {
+            color: white !important;
         }
     }
 
