@@ -128,11 +128,12 @@
   padding: 11px 27px;
   white-space: nowrap;
 }
-#profile-section .profile-content .profile-header .login-button {
+#profile-section .profile-content .profile-header .login-button, #profile-section .profile-content .profile-header .logout-button {
   padding: 8px 16px;
   background-color: #F4F6F9;
   border-radius: 4px;
   color: black;
+  cursor: pointer;
 }
 #profile-section .profile-content .profile-box {
   padding-top: 18px;
@@ -361,6 +362,123 @@
   margin-right: 16px;
   border-radius: 16px;
 }
+#profile-section .profile-content .myitems-box .myitems-header #cvcount {
+  color: #2196F3;
+}
+#profile-section .profile-content .myitems-box .box__item {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #e2e9f2;
+  background-color: white;
+  padding: 16px;
+  margin-bottom: 32px;
+  color: #061e40;
+  word-break: break-word;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-top .cvbox-info {
+  display: flex;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-top .cvbox-info .cvbox-image {
+  border: 5px solid #e2e9f2;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30px;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-top .cvbox-info .cvbox-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-bottom h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 4px;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-bottom p {
+  margin: 0;
+  font-size: 12px;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-bottom .icon {
+  width: 40px;
+  height: 40px;
+  background: #F4F6F9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  min-width: 40px;
+  position: unset;
+}
+#profile-section .profile-content .myitems-box .box__item .cvbox .cvbox-bottom .cvbox-bottom-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#profile-section .profile-content .wishlist-box {
+  padding: 20px;
+}
+#profile-section .profile-content .wishlist-box .box__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  color: #212944;
+  padding: 18px;
+  border: 1px solid #E4E7EC;
+  border-radius: 6px;
+  position: relative;
+  margin-bottom: 26px;
+}
+#profile-section .profile-content .wishlist-box .box__item .box__main {
+  display: flex;
+  gap: 15px;
+}
+#profile-section .profile-content .wishlist-box .box__item .box__fav {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  background: #F4F6F9;
+  border-radius: 6px;
+}
+#profile-section .profile-content .wishlist-box .box__item .box__fav .unliked-icon {
+  display: inline-block;
+  background-image: url(https://www.hellojob.az/content/assets/css/images/like.svg);
+  color: #2196F3;
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 20px;
+  filter: brightness(0) saturate(100%) invert(45%) sepia(86%) saturate(2370%) hue-rotate(187deg) brightness(103%) contrast(91%);
+}
 
 #dropmenu {
   display: block;
@@ -439,6 +557,31 @@
   transform: translateX(0);
 }
 
+@media screen and (max-width: 992px) {
+  .myitems-box .cvbox .cvbox-top .cvbox-info {
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 15px;
+  }
+  .myitems-box .cvbox .cvbox-top a {
+    width: 40px;
+    height: 40px;
+    background: #F4F6F9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    position: unset;
+  }
+  .myitems-box .cvbox .cvbox-top a span {
+    display: none;
+  }
+  .myitems-box .cvbox .cvbox-bottom {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
 @media screen and (max-width: 768px) {
   .profile-header {
     justify-content: space-between !important;

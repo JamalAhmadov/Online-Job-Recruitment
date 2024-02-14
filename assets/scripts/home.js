@@ -71,12 +71,12 @@ renderAuthors();
 
 const toggleButton = document.getElementById("hamburger");
 const dropmenu = document.getElementById("dropmenu");
-const mainElement = document.getElementsByTagName("main")[0] 
-const footerElement = document.getElementsByTagName("footer")[0] 
+const mainElement = document.getElementsByTagName("main")[0];
+const footerElement = document.getElementsByTagName("footer")[0];
 
 toggleButton.addEventListener("click", function () {
   dropmenu.classList.toggle("show");
-  if (dropmenu.classList.contains("show")) { 
+  if (dropmenu.classList.contains("show")) {
     mainElement.style.display = "none";
     footerElement.style.display = "none";
   } else {
@@ -84,7 +84,6 @@ toggleButton.addEventListener("click", function () {
     footerElement.style.display = "block";
   }
 });
-
 
 // SEARCH DATA
 
@@ -261,6 +260,7 @@ function login(event) {
   userbtn.classList.add("userhover");
 
   localStorage.setItem("loggedInUser", JSON.stringify(loginUser));
+  window.location.href = "../user-pages/profile.html";
 }
 
 function logout() {

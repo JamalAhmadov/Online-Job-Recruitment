@@ -4,13 +4,19 @@ if (loggedInUser) {
     button.textContent = loggedInUser.name;
   });
 }
-
 const toggleButton = document.getElementById("hamburger");
 const dropmenu = document.getElementById("dropmenu");
+const mainElement = document.querySelector(".addcv-box");
 
 toggleButton.addEventListener("click", function () {
   dropmenu.classList.toggle("show");
+  if (dropmenu.classList.contains("show")) {
+    mainElement.style.display = "none";
+  } else {
+    mainElement.style.display = "block";
+  }
 });
+
 
 var nameInput = document.getElementById("cv__name");
 var bdayInput = document.getElementById("cv__bday");
@@ -83,6 +89,18 @@ const postCv = () => {
       })
       .then(function (response) {
         console.log(response);
+        // JSON sunucusuna başarıyla gönderildiğinde, local storage'e de ekleyelim.
+        let myCvs = JSON.parse(localStorage.getItem("mycvs")) || [];
+        myCvs.push({
+          image: avatar.src,
+          name: cv__name.value,
+          bday: cv__bday.value,
+          phone: cv__pcode.value + cv__phone.value,
+          salary: cv__salary.value,
+          prof: cv__prof.value,
+          work: cv__work.value,
+        });
+        localStorage.setItem("mycvs", JSON.stringify(myCvs));
       })
       .catch(function (error) {
         console.log(error);

@@ -147,11 +147,12 @@
                 white-space: nowrap;
             }
 
-            .login-button {
+            .login-button, .logout-button {
                 padding: 8px 16px;
                 background-color: #F4F6F9;
                 border-radius: 4px;
                 color: black;
+                cursor: pointer;
             }
         }
 
@@ -409,6 +410,7 @@
 
         .myitems-box {
             padding: 20px;
+
             .myitems-title {
                 font-family: "Inter" !important;
                 font-weight: 700;
@@ -428,6 +430,150 @@
                     display: block;
                     margin-right: 16px;
                     border-radius: 16px;
+                }
+
+            }
+            .myitems-header{
+                #cvcount{
+                    color: #2196F3;
+                }
+            }
+
+            .box__item {
+
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Inter", sans-serif;
+                border: 1px solid #e2e9f2;
+                background-color: white;
+                padding: 16px;
+                margin-bottom: 32px;
+                color: #061e40;
+                word-break: break-word;
+
+
+
+                .cvbox {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .cvbox-top {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .cvbox-info {
+                            display: flex;
+
+                            .cvbox-image {
+                                border: 5px solid #e2e9f2;
+                                width: 120px;
+                                height: 120px;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                margin-right: 30px;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+                    }
+
+                    .cvbox-bottom {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+
+                        h4 {
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 18px;
+                            margin-bottom: 4px;
+                        }
+
+                        p {
+                            margin: 0;
+                            font-size: 12px;
+                        }
+
+                        .icon {
+                            width: 40px;
+                            height: 40px;
+                            background: #F4F6F9;
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-right: 16px;
+                            min-width: 40px;
+                            position: unset;
+
+                        }
+
+                        .cvbox-bottom-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+
+                        }
+                    }
+
+
+                }
+
+            }
+        }
+
+        .wishlist-box {
+            padding: 20px;
+
+            .box__item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 32px;
+                color: #212944;
+                padding: 18px;
+                border: 1px solid #E4E7EC;
+                border-radius: 6px;
+                position: relative;
+                margin-bottom: 26px;
+
+                .box__main {
+                    display: flex;
+                    gap: 15px;
+                }
+
+                .box__fav {
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: 18px;
+                    right: 18px;
+                    width: 32px;
+                    height: 32px;
+                    background: #F4F6F9;
+                    border-radius: 6px;
+
+                    .unliked-icon {
+                        display: inline-block;
+                        background-image: url(https://www.hellojob.az/content/assets/css/images/like.svg);
+                        color: #2196F3;
+                        background-size: 18px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        height: 30px;
+                        width: 20px;
+                        filter: brightness(0) saturate(100%) invert(45%) sepia(86%) saturate(2370%) hue-rotate(187deg) brightness(103%) contrast(91%);
+                    }
                 }
 
             }
@@ -522,7 +668,45 @@
     transform: translateX(0);
 }
 
+@media screen and (max-width:992px) {
+    .myitems-box {
+        .cvbox {
+            .cvbox-top {
+                .cvbox-info {
+                    flex-direction: column;
+                    margin-bottom: 10px;
+                    gap: 15px;
+                }
+
+                a {
+                    span {
+                        display: none;
+                    }
+
+                    width: 40px;
+                    height: 40px;
+                    background: #F4F6F9;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 40px;
+                    position: unset;
+
+                }
+            }
+
+            .cvbox-bottom {
+                display: flex;
+                flex-direction: column !important;
+            }
+        }
+    }
+
+}
+
 @media screen and (max-width:768px) {
+
     .profile-header {
         justify-content: space-between !important;
         background-color: #212944;
@@ -544,6 +728,7 @@
     .profile-sidebar {
         display: none !important;
     }
+
 }
 
 @media screen and (max-width:450px) {
