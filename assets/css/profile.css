@@ -74,6 +74,26 @@
 #profile-section .profile-sidebar .profile-tabs ul li a.active span img {
   filter: unset;
 }
+#profile-section .user-title {
+  font-family: "Inter" !important;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #2196F3;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+#profile-section .user-title::before {
+  content: "";
+  width: 3px;
+  height: 24px;
+  background-color: #2196F3;
+  display: block;
+  margin-right: 16px;
+  border-radius: 16px;
+}
 #profile-section .profile-content {
   width: 100%;
   right: 0;
@@ -128,12 +148,19 @@
   padding: 11px 27px;
   white-space: nowrap;
 }
-#profile-section .profile-content .profile-header .login-button, #profile-section .profile-content .profile-header .logout-button {
+#profile-section .profile-content .profile-header .login-button {
   padding: 8px 16px;
   background-color: #F4F6F9;
   border-radius: 4px;
   color: black;
+}
+#profile-section .profile-content .profile-header .logout-button {
+  background-color: #F4F6F9;
+  border-radius: 4px;
+  color: black;
   cursor: pointer;
+  border: 0;
+  padding: 5px;
 }
 #profile-section .profile-content .profile-box {
   padding-top: 18px;
@@ -172,26 +199,6 @@
 }
 #profile-section .profile-content .addcv-box {
   padding: 10px;
-}
-#profile-section .profile-content .addcv-box .addcv-title {
-  font-family: "Inter" !important;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 21px;
-  text-transform: uppercase;
-  color: #2196F3;
-  display: flex;
-  align-items: center;
-  margin-bottom: 24px;
-}
-#profile-section .profile-content .addcv-box .addcv-title::before {
-  content: "";
-  width: 3px;
-  height: 24px;
-  background-color: #2196F3;
-  display: block;
-  margin-right: 16px;
-  border-radius: 16px;
 }
 #profile-section .profile-content .addcv-box .progress {
   display: flex;
@@ -339,28 +346,11 @@
   border: 1px solid transparent;
   transition: 0.2s linear;
 }
-#profile-section .profile-content .myitems-box {
+#profile-section .profile-content .applies-box {
   padding: 20px;
 }
-#profile-section .profile-content .myitems-box .myitems-title {
-  font-family: "Inter" !important;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 21px;
-  text-transform: uppercase;
-  color: #2196F3;
-  display: flex;
-  align-items: center;
-  margin-bottom: 24px;
-}
-#profile-section .profile-content .myitems-box .myitems-title::before {
-  content: "";
-  width: 3px;
-  height: 24px;
-  background-color: #2196F3;
-  display: block;
-  margin-right: 16px;
-  border-radius: 16px;
+#profile-section .profile-content .myitems-box {
+  padding: 20px;
 }
 #profile-section .profile-content .myitems-box .myitems-header #cvcount {
   color: #2196F3;
@@ -478,6 +468,46 @@
   height: 30px;
   width: 20px;
   filter: brightness(0) saturate(100%) invert(45%) sepia(86%) saturate(2370%) hue-rotate(187deg) brightness(103%) contrast(91%);
+}
+#profile-section .profile-content .settings-box {
+  padding: 20px;
+}
+#profile-section .profile-content .settings-box #settingsForm {
+  width: 100%;
+  max-width: 500px;
+}
+#profile-section .profile-content .settings-box #settingsForm input {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #F4F6F9;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  border: 1px solid transparent;
+  padding: 14px 12px;
+  height: auto;
+  font-family: "Inter", sans-serif;
+}
+#profile-section .profile-content .settings-box #settingsForm label {
+  color: #212744;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  margin-bottom: 8px;
+  display: block;
+  font-family: "Inter", sans-serif;
+}
+#profile-section .profile-content .settings-box #settingsForm button {
+  width: 186px;
+  height: 46px;
+  background-color: #2196F3;
+  border: 1px solid #2196F3;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
 #dropmenu {

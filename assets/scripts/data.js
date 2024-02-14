@@ -4,21 +4,52 @@ const API = "http://localhost:3000/jobdata/";
 values = [];
 
 const renderData = (arr) => {
-  data__container.innerHTML = " ";
+  data__container.innerHTML = "";
   arr.forEach((item) => {
     let data__box = document.createElement("tr");
     data__box.innerHTML = `
-        
-        <td>${item.id}</td>
-        <td><img src="${item.image}" alt=""></td>
-        <td> ${item.title}</td>
-        <td> ${item.salary}</td>
-        <td><button onclick="deleteData(${item.id})">Remove </button> <button>Update </button></td>
-        
-
-        `;
+      <td>${item.id}</td>
+      <td><img src="${item.image}" alt=""></td>
+      <td>${item.title}</td>
+      <td>${item.salary}</td>
+      <td>
+        <button onclick="deleteData(${item.id})">Remove</button>
+        <button onclick="openUpdateModal(${item.id}, '${item.title}', ${item.salary})">Update</button>
+      </td>
+    `;
     data__container.append(data__box);
   });
+};
+
+const openUpdateModal = (id, title, salary) => {
+  const modal = document.getElementById("updateModal");
+  const titleInput = document.getElementById("updateTitle");
+  const salaryInput = document.getElementById("updateSalary");
+
+  titleInput.value = title;
+  salaryInput.value = salary;
+
+  modal.style.display = "block";
+
+  const updateButton = document.getElementById("updateButton");
+  updateButton.onclick = () => {
+    const newTitle = titleInput.value;
+    const newSalary = salaryInput.value;
+
+    modal.style.display = "none";
+  };
+};
+
+window.onclick = (event) => {
+  const modal = document.getElementById("updateModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+const closeUpdateModal = () => {
+  const modal = document.getElementById("updateModal");
+  modal.style.display = "none";
 };
 
 const getData = () => {
@@ -43,3 +74,24 @@ const deleteData = (id) => {
       console.error("Error deleting resource:", error);
     });
 };
+
+
+var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+if (loggedInUser) {
+  document.querySelectorAll(".login-button").forEach(function(button) {
+    button.textContent = loggedInUser.name;
+  });
+}
+
+const toggleButton = document.getElementById("hamburger");
+const dropmenu = document.getElementById("dropmenu");
+const mainElement = document.querySelector(".data-box");
+
+toggleButton.addEventListener("click", function () {
+  dropmenu.classList.toggle("show");
+  if (dropmenu.classList.contains("show")) {
+    mainElement.style.display = "none";
+  } else {
+    mainElement.style.display = "block";
+  }
+});

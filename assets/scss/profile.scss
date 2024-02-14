@@ -87,6 +87,28 @@
 
     }
 
+    .user-title {
+        &::before {
+            content: "";
+            width: 3px;
+            height: 24px;
+            background-color: #2196F3;
+            display: block;
+            margin-right: 16px;
+            border-radius: 16px;
+        }
+
+        font-family: "Inter" !important;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 21px;
+        text-transform: uppercase;
+        color: #2196F3;
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
     .profile-content {
         width: 100%;
         right: 0;
@@ -147,12 +169,21 @@
                 white-space: nowrap;
             }
 
-            .login-button, .logout-button {
+            .login-button {
                 padding: 8px 16px;
                 background-color: #F4F6F9;
                 border-radius: 4px;
                 color: black;
+            }
+
+            .logout-button {
+                background-color: #F4F6F9;
+                border-radius: 4px;
+                color: black;
                 cursor: pointer;
+                border: 0;
+                padding: 5px;
+
             }
         }
 
@@ -204,27 +235,7 @@
         .addcv-box {
             padding: 10px;
 
-            .addcv-title {
-                &::before {
-                    content: "";
-                    width: 3px;
-                    height: 24px;
-                    background-color: #2196F3;
-                    display: block;
-                    margin-right: 16px;
-                    border-radius: 16px;
-                }
 
-                font-family: "Inter" !important;
-                font-weight: 700;
-                font-size: 17px;
-                line-height: 21px;
-                text-transform: uppercase;
-                color: #2196F3;
-                display: flex;
-                align-items: center;
-                margin-bottom: 24px;
-            }
 
             .progress {
                 display: flex;
@@ -408,33 +419,14 @@
 
         }
 
+        .applies-box {
+            padding: 20px;
+        }
         .myitems-box {
             padding: 20px;
 
-            .myitems-title {
-                font-family: "Inter" !important;
-                font-weight: 700;
-                font-size: 17px;
-                line-height: 21px;
-                text-transform: uppercase;
-                color: #2196F3;
-                display: flex;
-                align-items: center;
-                margin-bottom: 24px;
-
-                &::before {
-                    content: "";
-                    width: 3px;
-                    height: 24px;
-                    background-color: #2196F3;
-                    display: block;
-                    margin-right: 16px;
-                    border-radius: 16px;
-                }
-
-            }
-            .myitems-header{
-                #cvcount{
+            .myitems-header {
+                #cvcount {
                     color: #2196F3;
                 }
             }
@@ -576,6 +568,53 @@
                     }
                 }
 
+            }
+        }
+
+        .settings-box {
+            padding: 20px;
+
+            #settingsForm {
+
+                width: 100%;
+                max-width: 500px;
+
+                input {
+                    width: 100%;
+                    border-radius: 8px;
+                    background-color: #F4F6F9;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 18px;
+                    border: 1px solid transparent;
+                    padding: 14px 12px;
+                    height: auto;
+                    font-family: "Inter", sans-serif;
+
+                }
+                label{
+                    color: #212744;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: normal;
+                    margin-bottom: 8px;
+                    display: block;
+                    font-family: "Inter", sans-serif;
+
+                }
+
+                button {
+                    width: 186px;
+                    height: 46px;
+                    background-color: #2196F3;
+                    border: 1px solid #2196F3;
+                    color: #fff;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    transition: .2s ease;
+                    cursor: pointer;
+                    margin-top: 15px;
+                }
             }
         }
     }

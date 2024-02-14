@@ -65,3 +65,17 @@ const deleteData = (id) => {
     });
 };
 
+
+
+const toggleButton = document.getElementById("hamburger");
+const dropmenu = document.getElementById("dropmenu");
+const mainElement = document.querySelector(".wishlist-box");
+
+toggleButton.addEventListener("click", function () {
+  dropmenu.classList.toggle("show");
+  if (dropmenu.classList.contains("show")) {
+    mainElement.style.display = "none";
+  } else {
+    mainElement.style.display = "block";
+  }
+});
