@@ -620,6 +620,15 @@
   .profile-header .backtohome {
     display: none !important;
   }
+  .profile-header .login-button {
+    display: none;
+  }
+  .profile-name {
+    font-size: 20px !important;
+  }
+  .profile-cv h2 {
+    font-size: 16px !important;
+  }
   #hamburger {
     display: flex !important;
   }
@@ -644,5 +653,31 @@
   .post-btn-div .post-cv {
     min-width: 100px !important;
     width: 100px !important;
+  }
+  .wishlist-box {
+    padding: 20px;
+  }
+  .wishlist-box .box__item .box__main {
+    display: flex;
+    gap: 15px;
+  }
+  .wishlist-box .box__item .box__main img {
+    width: 27px;
+  }
+  .wishlist-box .box__item .box__main h3 {
+    font-size: 16px;
+  }
+  .wishlist-box .box__item .box__main p {
+    font-size: 13px;
+  }
+  .wishlist-box .box__item .box__main span {
+    font-size: 13px;
+  }
+  .wishlist-box .box__item p {
+    font-size: 14px;
+  }
+  .wishlist-box .box__item .box__fav {
+    top: 8px !important;
+    right: 8px !important;
   }
 }

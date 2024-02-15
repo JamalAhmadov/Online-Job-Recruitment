@@ -17,7 +17,6 @@ toggleButton.addEventListener("click", function () {
   }
 });
 
-
 var nameInput = document.getElementById("cv__name");
 var bdayInput = document.getElementById("cv__bday");
 var phoneInput = document.getElementById("cv__phone");
@@ -86,21 +85,8 @@ const postCv = () => {
         salary: cv__salary.value,
         prof: cv__prof.value,
         work: cv__work.value,
-      })
-      .then(function (response) {
-        console.log(response);
-        // JSON sunucusuna başarıyla gönderildiğinde, local storage'e de ekleyelim.
-        let myCvs = JSON.parse(localStorage.getItem("mycvs")) || [];
-        myCvs.push({
-          image: avatar.src,
-          name: cv__name.value,
-          bday: cv__bday.value,
-          phone: cv__pcode.value + cv__phone.value,
-          salary: cv__salary.value,
-          prof: cv__prof.value,
-          work: cv__work.value,
-        });
-        localStorage.setItem("mycvs", JSON.stringify(myCvs));
+        approv: false,
+        user: loggedInUser.name,
       })
       .catch(function (error) {
         console.log(error);
@@ -109,3 +95,7 @@ const postCv = () => {
 };
 
 cv__post.addEventListener("click", postCv);
+
+if (!loggedInUser) {
+  window.location.href = "../main-pages/home.html";
+}

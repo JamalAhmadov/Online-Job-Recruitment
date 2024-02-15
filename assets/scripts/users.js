@@ -40,3 +40,16 @@ function banUser(user) {
 document.addEventListener('DOMContentLoaded', function() {
     renderUsersList();
 });
+
+const toggleButton = document.getElementById("hamburger");
+const dropmenu = document.getElementById("dropmenu");
+const mainElement = document.querySelector(".users-box");
+
+toggleButton.addEventListener("click", function () {
+  dropmenu.classList.toggle("show");
+  if (dropmenu.classList.contains("show")) {
+    mainElement.style.display = "none";
+  } else {
+    mainElement.style.display = "block";
+  }
+});

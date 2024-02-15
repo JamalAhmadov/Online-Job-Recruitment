@@ -92,24 +92,27 @@
         </div>
         <div id="dropmenu">
             <ul>
-                <a id="" class="login-button" href="#" onclick="openModal()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="19.576" height="17.567" viewBox="0 0 19.576 17.567">
-                        <g id="log-in_1_" data-name="log-in (1)" transform="translate(0.994 0.75)">
-                            <path id="Path_12" data-name="Path 12"
-                                d="M15,3h4.764c1.315,0,2.382.8,2.382,1.785v12.5c0,.986-1.066,1.785-2.382,1.785H15"
-                                transform="translate(-4.313 -3)" fill="none" stroke="#212844" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5"></path>
-                            <path id="Path_13" data-name="Path 13" d="M10,15.926l4.463-4.463L10,7"
-                                transform="translate(-3.776 -3.43)" fill="none" stroke="#212844" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="1.5"></path>
-                            <line id="Line_5" data-name="Line 5" x1="11" transform="translate(-0.244 7.915)" fill="none"
-                                stroke="#212844" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                            </line>
-                        </g>
-                    </svg>
-                    Sayta daxil ol</a>
+                <div class="user-action">
+                    <a id="loginButton" class="login-button" href="#" onclick="openModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19.576" height="17.567"
+                            viewBox="0 0 19.576 17.567">
+                            <g id="log-in_1_" data-name="log-in (1)" transform="translate(0.994 0.75)">
+                                <path id="Path_12" data-name="Path 12"
+                                    d="M15,3h4.764c1.315,0,2.382.8,2.382,1.785v12.5c0,.986-1.066,1.785-2.382,1.785H15"
+                                    transform="translate(-4.313 -3)" fill="none" stroke="#212844" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5"></path>
+                                <path id="Path_13" data-name="Path 13" d="M10,15.926l4.463-4.463L10,7"
+                                    transform="translate(-3.776 -3.43)" fill="none" stroke="#212844"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                <line id="Line_5" data-name="Line 5" x1="11" transform="translate(-0.244 7.915)"
+                                    fill="none" stroke="#212844" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5"></line>
+                            </g>
+                        </svg>
+                        Sayta daxil ol</a>
 
-                <a class="ad-announcement-button" onclick="checkLoggedInUser()">
+                </div>
+                <a onclick="checkLoggedInUser()" class="ad-announcement-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                         <g id="Group_821" data-name="Group 821" transform="translate(-1124 -49)">
                             <g id="plus-circle" transform="translate(1131.154 56.154)">
@@ -145,16 +148,16 @@
                         <ul class="search-tabs">
                             <li><a class="active" href="./home.html">İş elanları</a></li>
                             <li><a href="./resumes.html">CV-lər</a></li>
-                            <li><a href="./courses.html">Kurslar</a></li>
+                            <!-- <li><a href="./courses.html">Kurslar</a></li> -->
                         </ul>
                     </div>
                     <div class="search-ways col-lg-12">
                         <div class="search-bar">
                             <div class="search-bar-top">
-                                <form >
+                                <form>
                                     <div class="search_input">
-                                        <input id="search__input" autocomplete="off" type="text seach" name="query" value=""
-                                            placeholder="Məsələn, Dizayner">
+                                        <input id="search__input" autocomplete="off" type="text seach" name="query"
+                                            value="" placeholder="Məsələn, Dizayner">
                                     </div>
                                     <button type="submit" class="search-button"><span>Axtar</span></button>
                                 </form>
@@ -168,7 +171,7 @@
                                 <form action="">
                                     <div class="col-md-12">
                                         <div class="row">
-                                            <div class="col-lg-4 col-md-6 col-6">
+                                            <div class="col-lg-4 col-md-6 col-12">
                                                 <div>
                                                     <select name="direction" class="chosen-select">
                                                         <option value="works">İş axtarıram</option>
@@ -177,7 +180,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
+                                            <div class="col-lg-4 col-md-6 col-12">
                                                 <select name="category_id" class="chosen-select">
                                                     <option value="">Kateqoriya</option>
                                                     <option value="189" class="bg-primary text-white">Maliyyə</option>
@@ -276,7 +279,7 @@
                                                     <option value="223"> - Digər</option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
+                                            <div class="col-lg-4 col-md-6 col-12">
                                                 <select name="region_id" class="chosen-select">
                                                     <option value="">Şəhər</option>
                                                     <option value="1">Bakı</option>
@@ -344,7 +347,7 @@
                                                     <option value="75">Şamaxı</option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
+                                            <div class="col-lg-4 col-md-6 col-12">
                                                 <select name="salary_min" class="chosen-select">
                                                     <option value="">Maaş</option>
                                                     <option value="100">Minimum 100 AZN </option>
@@ -397,7 +400,7 @@
                                                     <option value="12000">Minimum 12000 AZN </option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
+                                            <div class="col-lg-4 col-md-6 col-12">
                                                 <select name="education_type" class="chosen-select">
                                                     <option value="0" selected="">Təhsil</option>
                                                     <option value="2">Ali</option>
@@ -408,7 +411,7 @@
                                                     <option value="7">- Digər -</option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-4 col-md-6 col-6">
+                                            <div class="col-lg-4 col-md-6 col-12">
                                                 <select name="work_exp" class="chosen-select">
                                                     <option value="0" selected="">İş rejimi</option>
                                                     <option value="1">1 ildən az</option>
@@ -487,8 +490,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide swiper-slide-next" id="189"
-                                     role="group" aria-label="2 / 16">
+                                <div class="swiper-slide swiper-slide-next" id="189" role="group" aria-label="2 / 16">
                                     <div class="slider-card">
                                         <a href="">
                                             <img loading="lazy"
@@ -503,10 +505,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="192" 
-                                    role="group" aria-label="3 / 16">
+                                <div class="swiper-slide" id="192" role="group" aria-label="3 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/marketinq-4">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/marketinq-cat-641433fe9e5c6641433fe9e5d3-rKuhtYV5f4UPa85.svg"
                                                 alt="Marketinq">
@@ -519,10 +520,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="195" 
-                                    role="group" aria-label="4 / 16">
+                                <div class="swiper-slide" id="195" role="group" aria-label="4 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/texnologiya">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/texnologiya-cat-641433be8b37d641433be8b38e-e9_0BJdsJbmUnVB.svg"
                                                 alt="Texnologiya">
@@ -535,10 +535,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="291" 
-                                    role="group" aria-label="5 / 16">
+                                <div class="swiper-slide" id="291" role="group" aria-label="5 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/restoran-isi-1">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2024/01/07/restoran-isi-cat-659a5eccb8689659a5eccb8698-pIenx2x8HBKIC0d.svg"
                                                 alt="Restoran işi">
@@ -551,10 +550,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="190" 
-                                    role="group" aria-label="6 / 16">
+                                <div class="swiper-slide" id="190" role="group" aria-label="6 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/satis-5">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/satis-cat-64143417860756414341786081-vC1K1njTVifH3Sh.svg"
                                                 alt="Satış">
@@ -567,10 +565,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="194" 
-                                    role="group" aria-label="7 / 16">
+                                <div class="swiper-slide" id="194" role="group" aria-label="7 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/xidmet">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/xidmet-cat-6414342ff21226414342ff212e-m10Qat01rxfzfT3.svg"
                                                 alt="Xidmət">
@@ -583,10 +580,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="193" 
-                                    role="group" aria-label="8 / 16">
+                                <div class="swiper-slide" id="193" role="group" aria-label="8 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/dizayn">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/dizayn-cat-64143423043a064143423043ab-dW7E0i95SRjZ4mG.svg"
                                                 alt="Dizayn">
@@ -599,10 +595,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="200" 
-                                    role="group" aria-label="9 / 16">
+                                <div class="swiper-slide" id="200" role="group" aria-label="9 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/muxtelif">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/muxtelif-cat-6414343d74be26414343d74bed-Q30Ca59zmtb--84.svg"
                                                 alt="Müxtəlif">
@@ -615,10 +610,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="197" 
-                                    role="group" aria-label="10 / 16">
+                                <div class="swiper-slide" id="197" role="group" aria-label="10 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/sehiyye">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/tibb-ve-eczaciliq-cat-6414344d875b26414344d875bd-N7Sq_u6Y1JguQLo.svg"
                                                 alt="Səhiyyə">
@@ -631,10 +625,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="199" 
-                                    role="group" aria-label="11 / 16">
+                                <div class="swiper-slide" id="199" role="group" aria-label="11 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/tehsil-ve-elm">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/tehsil-ve-elm-cat-6414348e561bd6414348e561cb-lY0Gl-kw9Pyk_kP.svg"
                                                 alt="Təhsil və elm">
@@ -647,10 +640,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="196" 
-                                    role="group" aria-label="12 / 16">
+                                <div class="swiper-slide" id="196" role="group" aria-label="12 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/huquq">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/18/huquqsunasliq-cat-64159435cecf664159435ced07-M7Vk7vB63FHKEg1.svg"
                                                 alt="Hüquq">
@@ -663,10 +655,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide" id="198" 
-                                    role="group" aria-label="13 / 16">
+                                <div class="swiper-slide" id="198" role="group" aria-label="13 / 16">
                                     <div class="slider-card">
-                                        <a href="/is-elanlari/inzibati">
+                                        <a href="">
                                             <img loading="lazy"
                                                 src="https://www.hellojob.az/uploads/_categories/2023/03/17/inzibati-cat-641434674b8d6641434674b8e4-HuHF0Szj9u46Lut.svg"
                                                 alt="İnzibati">
@@ -679,8 +670,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide"  role="group"
-                                    aria-label="14 / 16">
+                                <div class="swiper-slide" role="group" aria-label="14 / 16">
                                     <div class="slider-card">
                                         <a href="/vakansiyalar/internships">
                                             <img loading="lazy"
@@ -695,8 +685,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide"  role="group"
-                                    aria-label="15 / 16">
+                                <div class="swiper-slide" role="group" aria-label="15 / 16">
                                     <div class="slider-card">
                                         <a href="/vakansiyalar/freelance">
                                             <img loading="lazy"
@@ -711,8 +700,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="swiper-slide"  role="group"
-                                    aria-label="16 / 16">
+                                <div class="swiper-slide" role="group" aria-label="16 / 16">
                                     <div class="slider-card">
                                         <a href="/vakansiyalar/part-time">
                                             <img loading="lazy"
@@ -741,126 +729,6 @@
 
 
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-                                <div style="position: relative;" class="modal-header ">
-                                    <img style="position: absolute; left: 50%;"
-                                        src="/assets/images/home-page/menu-icons/loginico.svg" alt="">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="text-center login-text">
-                                        <h3>Hesabınıza daxil olun</h3>
-                                        <p>Xoş gəlmişsiniz!</p>
-                                        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=https%3A%2F%2Fwww.hellojob.az%2Fuser-login%2Fgoogle_verify&amp;client_id=36186815782-e8dkfbottlq01ioglfqg9fq49hkepvec.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&amp;access_type=offline&amp;approval_prompt=force"
-                                            class="google-login-btn" target="_blank">
-                                            <img loading="lazy"
-                                                src="https://www.hellojob.az/content/assets/images/resume/svg-icons/google.svg"
-                                                alt="">
-                                            Google ilə daxil ol
-                                        </a>
-                                        <p class="login-agreement-text">
-                                            Hesab yaradaraq Hellojob.az vebsayt <a href="/page/qaydalar" target="_blank"
-                                                style="color: #344054; text-decoration: underline; font-weight: 500;">qaydalarını</a>
-                                            qəbul edirəm.
-                                        </p>
-                                        <span>və ya</span>
-                                    </div>
-
-                                    <form id="loginForm" onsubmit="login(event)">
-                                        <div class="login-inputs">
-                                            <label for="loginEmail">E-mail:</label>
-                                            <input placeholder="E-poçtunuzu yazın" type="email" id="loginEmail"
-                                                name="email"><br>
-                                            <label for="loginPassword">Password:</label>
-                                            <input placeholder="*******" type="password" id="loginPassword"
-                                                name="password"><br>
-                                        </div>
-                                        <div class="form-condition">
-                                            <div class="form-check">
-                                                <input type="checkbox" name="save_me" class="form-control"
-                                                    id="save_pass">
-                                                <label for="save_pass">Yadda saxla</label>
-                                            </div>
-                                            <a href="#forgot-password" class="regs_bopup_open"
-                                                data-effect="mfp-zoom-in">Şifrəni unutmuşam</a>
-
-                                        </div>
-                                        <button id="login-btn" class="login-submit-btn" type="submit">Daxil ol</button>
-                                        <div id="loginError-message" class="error-message"></div>
-                                        <button type="button" class="go-register-btn" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">
-                                            Qeydiyyatdan keç
-                                        </button>
-                                    </form>
-
-                                    <a href="#" class="login-button"></a>
-                                    <!-- <button onclick="logout()">Logout</button> -->
-
-                                </div>
-                                <!-- <div class="modal-footer">
-
-                                </div> -->
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- REGISTER Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <img src="/assets/images/home-page/menu-icons/registeriscon.svg" alt="">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <h3>Qeydiyyatdan keç</h3>
-                                    <form id="registerForm" onsubmit="register(event)">
-                                        <div class="register-inputs">
-                                            <label for="name">Adınız*</label>
-                                            <input type="text" id="name" name="name"><br>
-
-                                            <label for="email">E-poçt*</label>
-                                            <input type="email" id="email" name="email"><br>
-
-                                            <label for="password">Şifrə*</label>
-                                            <input type="password" id="password" name="password"><br>
-
-                                            <label for="confirmPassword">Şifrə təkrar*</label>
-                                            <input type="password" id="confirmPassword" name="confirmPassword"><br>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input type="checkbox" id="acceptTerms">
-                                            <label for="acceptTerms">Hesab yaradaraq Hellojob.az vebsayt <a
-                                                    href="/page/qaydalar" target="_blank"
-                                                    style="color: #344054; text-decoration: underline; font-weight: 500;">qaydalarını</a>qəbul
-                                                edirəm.</label>
-                                        </div>
-
-
-                                        <button class="register-submit-btn" type="submit">Qeydiyyat ol</button>
-                                        <div id="errorMessages" class="errorMessages error-message"></div>
-                                        <button type="button" class="go-login-btn" data-bs-toggle="modal"
-                                            data-bs-target="#staticBackdrop">
-                                            Giriş səhifəsi
-                                        </button>
-                                    </form>
-                                </div>
-                                <!-- <div class="modal-footer">
-
-                                </div> -->
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -932,6 +800,121 @@
 
     </main>
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div style="position: relative;" class="modal-header ">
+                    <img style="position: absolute; left: 50%;" src="/assets/images/home-page/menu-icons/loginico.svg"
+                        alt="">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center login-text">
+                        <h3>Hesabınıza daxil olun</h3>
+                        <p>Xoş gəlmişsiniz!</p>
+                        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=https%3A%2F%2Fwww.hellojob.az%2Fuser-login%2Fgoogle_verify&amp;client_id=36186815782-e8dkfbottlq01ioglfqg9fq49hkepvec.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&amp;access_type=offline&amp;approval_prompt=force"
+                            class="google-login-btn" target="_blank">
+                            <img loading="lazy"
+                                src="https://www.hellojob.az/content/assets/images/resume/svg-icons/google.svg" alt="">
+                            Google ilə daxil ol
+                        </a>
+                        <p class="login-agreement-text">
+                            Hesab yaradaraq Hellojob.az vebsayt <a href="/page/qaydalar" target="_blank"
+                                style="color: #344054; text-decoration: underline; font-weight: 500;">qaydalarını</a>
+                            qəbul edirəm.
+                        </p>
+                        <span>və ya</span>
+                    </div>
+
+                    <form id="loginForm" onsubmit="login(event)">
+                        <div class="login-inputs">
+                            <label for="loginEmail">E-mail:</label>
+                            <input autocomplete="off" placeholder="E-poçtunuzu yazın" type="email" id="loginEmail" name="email"><br>
+                            <label for="loginPassword">Password:</label>
+                            <input placeholder="*******" type="password" id="loginPassword" name="password"><br>
+                        </div>
+                        <div class="form-condition">
+                            <div class="form-check">
+                                <input type="checkbox" name="save_me" class="form-control" id="save_pass">
+                                <label for="save_pass">Yadda saxla</label>
+                            </div>
+                            <a href="#forgot-password" class="regs_bopup_open" data-effect="mfp-zoom-in">Şifrəni
+                                unutmuşam</a>
+
+                        </div>
+                        <button id="login-btn" class="login-submit-btn" type="submit">Daxil ol</button>
+                        <div id="loginError-message" class="error-message"></div>
+                        <button type="button" class="go-register-btn" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Qeydiyyatdan keç
+                        </button>
+                    </form>
+
+                    <a href="#" class="login-button"></a>
+                    <!-- <button onclick="logout()">Logout</button> -->
+
+                </div>
+                <!-- <div class="modal-footer">
+
+                                </div> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- REGISTER Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="/assets/images/home-page/menu-icons/registeriscon.svg" alt="">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Qeydiyyatdan keç</h3>
+                    <form id="registerForm" onsubmit="register(event)">
+                        <div class="register-inputs">
+                            <label for="name">Adınız*</label>
+                            <input autocomplete="off" type="text" id="name" name="name"><br>
+
+                            <label for="email">E-poçt*</label>
+                            <input autocomplete="off" type="email" id="email" name="email"><br>
+
+                            <label for="password">Şifrə*</label>
+                            <input autocomplete="off" type="password" id="password" name="password"><br>
+
+                            <label for="confirmPassword">Şifrə təkrar*</label>
+                            <input autocomplete="off" type="password" id="confirmPassword" name="confirmPassword"><br>
+                        </div>
+
+                        <div class="form-check">
+                            <input autocomplete="off" type="checkbox" id="acceptTerms">
+                            <label for="acceptTerms">Hesab yaradaraq Hellojob.az vebsayt <a href="/page/qaydalar"
+                                    target="_blank"
+                                    style="color: #344054; text-decoration: underline; font-weight: 500;">qaydalarını</a>qəbul
+                                edirəm.</label>
+                        </div>
+
+
+                        <button class="register-submit-btn" type="submit">Qeydiyyat ol</button>
+                        <div id="errorMessages" class="errorMessages error-message"></div>
+                        <button type="button" class="go-login-btn" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            Giriş səhifəsi
+                        </button>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+
+                                </div> -->
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="footer-top">
@@ -950,16 +933,16 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="/sirketler">Şirkətlər</a>
+                                    <a href="">Şirkətlər</a>
                                 </li>
                                 <li>
-                                    <a href="/blog">Bloq</a>
+                                    <a href="">Bloq</a>
                                 </li>
                                 <li>
-                                    <a href="/page/qaydalar">Qaydalar</a>
+                                    <a href="">Qaydalar</a>
                                 </li>
                                 <li>
-                                    <a href="/page/saytda-reklam">Saytda reklam</a>
+                                    <a href="">Saytda reklam</a>
                                 </li>
                             </ul>
                         </div>

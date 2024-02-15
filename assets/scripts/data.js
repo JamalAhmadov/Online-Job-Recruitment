@@ -13,8 +13,8 @@ const renderData = (arr) => {
       <td>${item.title}</td>
       <td>${item.salary}</td>
       <td>
-        <button onclick="deleteData(${item.id})">Remove</button>
-        <button onclick="openUpdateModal(${item.id}, '${item.title}', ${item.salary})">Update</button>
+        <button class="reject" onclick="deleteData(${item.id})">Remove</button>
+        <button class="approve" onclick="openUpdateModal(${item.id}, '${item.title}', ${item.salary})">Update</button>
       </td>
     `;
     data__container.append(data__box);
@@ -76,12 +76,6 @@ const deleteData = (id) => {
 };
 
 
-var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-if (loggedInUser) {
-  document.querySelectorAll(".login-button").forEach(function(button) {
-    button.textContent = loggedInUser.name;
-  });
-}
 
 const toggleButton = document.getElementById("hamburger");
 const dropmenu = document.getElementById("dropmenu");
@@ -95,3 +89,5 @@ toggleButton.addEventListener("click", function () {
     mainElement.style.display = "block";
   }
 });
+
+

@@ -18,3 +18,7 @@ toggleButton.addEventListener("click", function () {
   } else {
   }
 });
+
+if (!loggedInUser) {
+  window.location.href = "../main-pages/home.html";
+}

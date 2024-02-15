@@ -142,6 +142,107 @@
   border: 0;
   padding: 5px;
 }
+#profile-section .profile-content .admin-box {
+  padding: 20px;
+}
+#profile-section .profile-content .admin-box .box__item {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #e2e9f2;
+  background-color: white;
+  padding: 16px;
+  margin-bottom: 32px;
+  color: #061e40;
+  word-break: break-word;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top .cvbox-info {
+  display: flex;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top .cvbox-info .cvbox-image {
+  border: 5px solid #e2e9f2;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top .cvbox-info .cvbox-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top .cvbox-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top .cvbox-buttons button {
+  color: white;
+  border: 1px solid transparent;
+  padding: 3px 7px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top .cvbox-buttons button:hover {
+  background-color: transparent;
+  color: black;
+  border: 1px solid darkblue;
+  transition: all 0.3s ease;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top .cvbox-buttons .approve {
+  background-color: green;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-top .cvbox-buttons .reject {
+  background-color: red;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-bottom h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 4px;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-bottom p {
+  margin: 0;
+  font-size: 12px;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-bottom .icon {
+  width: 40px;
+  height: 40px;
+  background: #F4F6F9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  min-width: 40px;
+  position: unset;
+}
+#profile-section .profile-content .admin-box .box__item .cvbox .cvbox-bottom .cvbox-bottom-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 #profile-section .profile-content .data-box {
   width: 100%;
   padding: 20px;
@@ -176,9 +277,27 @@
   height: auto;
 }
 #profile-section .profile-content .data-box button {
-  border: 1px solid gray;
-  border-radius: 6px;
-  padding: 2px 10px;
+  color: white;
+  border: 1px solid transparent;
+  padding: 3px 7px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+#profile-section .profile-content .data-box button:hover {
+  background-color: transparent;
+  color: black;
+  border: 1px solid darkblue;
+  transition: all 0.3s ease;
+}
+#profile-section .profile-content .data-box .approve {
+  background-color: green;
+}
+#profile-section .profile-content .data-box .reject {
+  background-color: red;
+}
+#profile-section .profile-content .data-box .modalbtn {
+  background-color: blue;
 }
 #profile-section .profile-content .data-box .modal-content {
   background-color: #fefefe;
@@ -304,6 +423,31 @@
   transform: translateX(0);
 }
 
+@media screen and (max-width: 992px) {
+  .admin-box .cvbox .cvbox-top .cvbox-info {
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 15px;
+  }
+  .admin-box .cvbox .cvbox-top a {
+    width: 40px;
+    height: 40px;
+    background: #F4F6F9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    position: unset;
+  }
+  .admin-box .cvbox .cvbox-top a span {
+    display: none;
+  }
+  .admin-box .cvbox .cvbox-bottom {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
 @media screen and (max-width: 768px) {
   .profile-header {
     justify-content: space-between !important;

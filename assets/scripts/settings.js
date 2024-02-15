@@ -60,3 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("Kullanıcı oturumu bulunamadı veya kullanıcı verileri eksik.");
   }
 });
+
+if (!loggedInUser) {
+  window.location.href = "../main-pages/home.html";
+}

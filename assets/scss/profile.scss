@@ -422,6 +422,7 @@
         .applies-box {
             padding: 20px;
         }
+
         .myitems-box {
             padding: 20px;
 
@@ -592,7 +593,8 @@
                     font-family: "Inter", sans-serif;
 
                 }
-                label{
+
+                label {
                     color: #212744;
                     font-weight: 500;
                     font-size: 14px;
@@ -753,6 +755,19 @@
         .backtohome {
             display: none !important;
         }
+
+        .login-button {
+            display: none;
+        }
+    }
+    .profile-name{
+        font-size: 20px !important;
+    }
+    .profile-cv{
+        h2{
+            font-size: 16px !important;
+        }
+
     }
 
     #hamburger {
@@ -785,6 +800,45 @@
         .post-cv {
             min-width: 100px !important;
             width: 100px !important;
+        }
+    }
+
+    .wishlist-box {
+        padding: 20px;
+
+        .box__item {
+            .box__main {
+                display: flex;
+                gap: 15px;
+
+                img {
+                    width: 27px;
+                }
+
+                h3 {
+                    font-size: 16px;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+
+                span {
+                    font-size: 13px;
+                }
+
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+
+            .box__fav {
+                top: 8px !important;
+                right: 8px !important;
+            }
+
         }
     }
 }

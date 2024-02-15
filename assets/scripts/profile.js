@@ -14,12 +14,11 @@ function logOut() {
   if (condition) {
     localStorage.removeItem("loggedInUser");
     document.querySelector(".login-button").textContent = "Sayta daxil ol";
-    window.location.href = "../main-pages/home.html"
+    window.location.href = "../main-pages/home.html";
   }
 }
 
 logout.addEventListener("click", logOut);
-
 
 const toggleButton = document.getElementById("hamburger");
 const dropmenu = document.getElementById("dropmenu");
@@ -33,3 +32,7 @@ toggleButton.addEventListener("click", function () {
     mainElement.style.display = "block";
   }
 });
+
+if (!loggedInUser) {
+  window.location.href = "../main-pages/home.html";
+}

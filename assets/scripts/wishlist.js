@@ -34,7 +34,7 @@ const renderData = (arr) => {
 
     <div>
       <span onclick="deleteData(${item.id})" class="box__fav"><i class="unliked-icon"></i></span>
-      <p>${item.salary} AZN</p>
+      <p>${item.salary ?  ` ${item.salary } AZN` : "" }</p>
     </div>
 
         `;
@@ -79,3 +79,7 @@ toggleButton.addEventListener("click", function () {
     mainElement.style.display = "block";
   }
 });
+
+if (!loggedInUser) {
+  window.location.href = "../main-pages/home.html";
+}

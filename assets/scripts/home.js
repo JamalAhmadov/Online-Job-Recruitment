@@ -297,20 +297,16 @@ function checkLoggedInUser() {
 const addToFav = async (id) => {
   try {
     const response = await fetch("http://localhost:3000/favorites");
-
     const favorites = await response.json();
-    console.log(favorites);
-
     const filteredfav = favorites.find((item) => item.id == id);
-    console.log(filteredfav);
-
     if (filteredfav) {
       await fetch(`http://localhost:3000/favorites/${id}`, {
         method: "DELETE",
       });
+      document.getElementById(`item${id}`).classList.remove("liked-icon");
+      document.getElementById(`item${id}`).classList.add("unliked-icon");
     } else {
       const jobResponse = await fetch(`http://localhost:3000/jobdata/${id}`);
-
       const jobData = await jobResponse.json();
       await fetch("http://localhost:3000/favorites", {
         method: "POST",
@@ -319,11 +315,26 @@ const addToFav = async (id) => {
         },
         body: JSON.stringify(jobData),
       });
+     
     }
   } catch (error) {
     console.error(error.message);
   }
 };
+
+// const likedchecker = () => {
+//   let likedItems = [];
+//   likedItems = JSON.parse(localStorage.getItem("liked")) || [];
+//   likedItems.forEach((id) => {
+//     let item = document.getElementById(`item${id}`);
+//     if (item) {
+//       item.classList.add("liked-icon");
+//     }
+//   });
+// };
+
+// likedchecker();
+
 
 const filterOpen = () => {
   document.querySelector(".search-bar-bottom").style.display = "flex";
@@ -359,8 +370,15 @@ const swiper = new Swiper(".swiper", {
         prevEl: null,
       },
     },
-    0: {
+    400: {
       slidesPerView: 3,
+      navigation: {
+        nextEl: null,
+        prevEl: null,
+      },
+    },
+    0: {
+      slidesPerView: 2,
 
       navigation: {
         nextEl: null,
@@ -399,7 +417,7 @@ async function main() {
       
       <div class="box__main">
       <div >
-        <img src="${item.image}" alt="Quartz belt watch">
+        <img src="${item.image}" alt="">
       </div>
       <div>
         <h3>${item.title}</h3>
@@ -416,7 +434,7 @@ async function main() {
       </div>
 
       <div>
-        <span onclick="addToFav(${item.id})" class="box__fav"><i class="unliked-icon"></i></span>
+        <span onclick="addToFav(${item.id})" class="box__fav"><i id="item${item.id}" class="unliked-icon"></i></span>
         <p>${item.salary} AZN</p>
       </div>
       
@@ -464,3 +482,5 @@ async function main() {
 }
 
 main();
+
+
